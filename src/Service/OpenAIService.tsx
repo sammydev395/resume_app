@@ -126,7 +126,7 @@ Houston School District - Helping accelerate development and deliveries for vari
 
 const OpenAIService = async (resumeText: string, question: string): Promise<string | null> => {
 
-  const openai = new OpenAI({ apiKey: 'sk-proj-6Ab0MWSQoLVx1SfYSLuiT3BlbkFJOr1HkPrNi9mrjs9HGWjS', dangerouslyAllowBrowser: true });
+  const openai = new OpenAI({ dangerouslyAllowBrowser: true });
   try {
     const chatCompletion = await openai.chat.completions.create({
       model: 'gpt-3.5-turbo',
