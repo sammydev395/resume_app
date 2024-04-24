@@ -1,5 +1,5 @@
 // OpenAIService.tsx
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import  { OpenAI } from 'openai';
 
 const  resumeText1 = `Halliburton (Azure & Desktop Solution Architect/Team Lead)                                                              Aug 2022 –  Mid Jan 2024, Houston
@@ -124,29 +124,55 @@ Bot Services
 Houston School District - Helping accelerate development and deliveries for various software components of an MS effort around Safe Spaces which is a part of the overall Connected Cities vision https://www.microsoft.com/en-us/enterprise/citynext. My responsibility specifically was for the Xamarin Native iOS & Droid apps as well as the chatbot integration.  Azure IoT devices in the schools were the back bone of this solution based on the open-source Project Edison effort. 
 `;
 
-const OpenAIService = async (resumeText: string, question: string): Promise<string | null> => {
+interface OpenAIServiceProps {
+  fileContents: string;
+  question: string;
+  setResponse: React.Dispatch<React.SetStateAction<string>>;
+};
 
-  const openai = new OpenAI({ dangerouslyAllowBrowser: true });
-  try {
-    const chatCompletion = await openai.chat.completions.create({
-      model: 'gpt-3.5-turbo',
-      messages: [ { "role": "system", "content": question }, { "role": "user", "content": resumeText1 } ],
-      max_tokens: 2000,  // Max amount of tokens the AI will respond with
-      n: 1,
-      stop: '\n',
-      temperature: 1.17, // lower is more coherent and conservative, higher is more creative and diverse.
-      stream: true,
-    });
-    let results = '';
-    for await (const part of chatCompletion) {
-      results += part.choices[0]?.delta?.content || '';
-      console.log(part.choices[0]?.delta?.content || '');
+const OpenAIService: React.FC<OpenAIServiceProps> =  ({ fileContents, question, setResponse  }) => {
+  const responseRef = useRef<string>();
+  const apiKey: string = process.env.REACT_APP_OPENAI_APP_API_KEY ?? '';
+  console.log('API Key:', apiKey);
+
+   useEffect(() => {
+    const getOpenAIResponse = async () => {
+      if(fileContents === '' || question === '') return;
+
+      if (!apiKey) {
+        console.error('OpenAI API key not found');
+        return null;
+      }
+    
+      responseRef.current = '';  
+      const openai = new OpenAI({ apiKey:apiKey, dangerouslyAllowBrowser: true });
+      try {
+        const chatCompletion = await openai.chat.completions.create({
+          model: 'gpt-3.5-turbo',
+          messages: [ { "role": "system", "content": resumeText1 }, { "role": "user", "content": question } ], 
+          max_tokens: 250,  // Max amount of tokens the AI will respond with
+          top_p: 1,
+          frequency_penalty: 0,
+          presence_penalty: 0,
+          temperature: 1, // lower is more coherent and conservative, higher is more creative and diverse.
+          stream: true,
+        });
+        
+        for await (const chunk of chatCompletion) {
+         responseRef.current = responseRef.current! + chunk.choices[0]?.delta?.content;
+         console.log(responseRef.current);
+         setResponse(responseRef.current);
+        }
+        
+      } catch (error) {
+        console.error('Error:', error);
+      }
     }
-    return results;
-  } catch (error) {
-    console.error('Error:', error);
-    return '';
-  }
+
+    getOpenAIResponse();
+  }, [fileContents, question]);
+
+  return null;
 };
 
 export default OpenAIService;

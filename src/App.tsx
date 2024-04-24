@@ -8,24 +8,10 @@ import FileLoader from './FileLoader';
 import OpenAIService from './Service/OpenAIService'
 
 const App: React.FC = () => {
+
   const [fileContents, setFileContents] = useState<string>('');
   const [question, setQuestion] = useState<string>('');
   const [response, setResponse] = useState<string>('');
-
-  useEffect(() => {
-    const fetchResponse = async () => {
-      const chatResponse = await OpenAIService(fileContents, question);
-      if (chatResponse) {
-        setResponse(chatResponse);
-      }
-    };
-
-    // Trigger API call only if inputText is not empty
-    if (question && fileContents) {
-      fetchResponse();
-    }
-
-  }, [question, fileContents]);
 
   const handleFileLoaded = (contents: string) => {
     setFileContents(contents);
@@ -56,7 +42,8 @@ const App: React.FC = () => {
           </TableBody>
         </Table>
       </TableContainer>
-      <ResultsField results={response} />
+      <ResultsField results={response} question={question} />
+      <OpenAIService fileContents={fileContents} question={question} setResponse={setResponse}></OpenAIService>
     </div>
   );
 }

@@ -12,10 +12,10 @@ export interface DataRow {
   
 export const UIData: DataRow[] = [
     { 
-        "label": "Row 1", 
+        "label": "Azure Work", 
         "radioOptions": [
-            { "label": "By Project", "value": "Give me all projects where I did work for Halliburton" },
-            { "label": "Option B", "value": "optionB" },
+            { "label": "By Project", "value": "Give me all projects where I used Azure" },
+            { "label": "By Year", "value": "Work done with Azure for each project in years" },
             { "label": "Option C", "value": "optionC" }
       ], 
     },
