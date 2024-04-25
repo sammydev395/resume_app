@@ -28,16 +28,59 @@ export const UIData: DataRow[] = [
       ], 
     },
     { 
-        "label": "Row 3", 
+        "label": "System", 
         "radioOptions": [
-            { "label": "Option A", "value": "optionA" },
+            { "label": "System", "value": "Please give me a summary of System Architecture Work" },
             { "label": "Option B", "value": "optionB" },
             { "label": "Option C", "value": "optionC" }
       ], 
     },
 ];
 
-export const  resumeText = `Built applications for Monitoring & Managing Deep Sea Wells from Oil Rigs 
+export const  resumeText = `DrFit Cloud Architecture 🔎
+Domain Driven Design & Architecture – Patterns 🔎
+Azure cloud hosted DDD & pattern-based architecture is highly scalable for the potentially large numbers of users around the world. Core domain sub domains identified, distilled further into bounded contexts which are then mapped to implementation patterns. Generic & Supporting domains are also identified and mapped to already implemented patterns. Besides the largely Tactical DDD, important elements of Strategic-DDD like CI/CD and upstream-downstream Context Mapping were identified. 
+Infrastructure – Shared IaC 
+	Your atypical AAD, Key Vault, Monitoring & Insights resources, shared resources like ACR, AAD B2C for custom identity management & Azure Search were also provisioned 
+Fitness Mobile Application – Xamarin
+	Support for indoor bike sessions, outdoor runs, indoor gym circuit training, indoor and outdoor bootcamps. Vital here is the proprietary tech developed for a real time view of multiple participant progress with custom map overlays and markers
+	UI build around Xamarin Forms with MVVMCross + lots of useful nuget packages with Skia Sharpnado doing some of the heavy lifting
+	iWatch & iOS IoT device sensor data streaming was managed by carefully developed low latency managers able to stream JSON to the cloud. Custom integration of IoT Edge BLE Smart Trainer with IoT Gateway such as iOS & Droid devices
+Workout Data Streaming
+	IoT + Service Bus 🔎 Workout data is streamed live from sensors on IoT devices to Azure IoT hubs, routed via ASA to the correct Service Bus Topic based on the IoT device time zone, province and city 
+	Stream Analytics 🔎 Data from IoT hubs is routed to ASA for sensor data Anomaly detection and then queued to Service Bus Topics. Evaluated Kafka against Service Bus but decided to go with Service Bus
+API Management – AKS Microservices 🔎
+	All our Functions are rolled out via containers running in an AKS cluster behind an internal load balancer. Azure API Gateway subnet is setup to resource provides routing, offloading and security management plus throttling & aggregation features for future needs
+	DrFit Microservices 🔎framework is all based around durable orchestrations and functions with minimal effort handling of any key vault secured and non-secured configuration information, storage, logging, extensions to the underlying IoC/DI AutoFac facilities
+•	Onboarding domain - Notifications, Device, Azure Resources Access keys/tokens, Role and Account Management
+•	Messaging domain – Endpoints, Routing/Channels & Systems Management
+•	Front End Workout domain – Workout Selection, Workout Tracking, Workout History, Workout Groups & more
+	Logic Apps
+•	Onboarding flows & more
+DrFitAdmin – App Services
+	Phase I, Node.js + React based Admin Application load balanced using Azure Front Door 
+DrFitBot – Bot Services 🔎
+	Full Chatbot integration into the Xamarin app via the web chat channel required some challenging Xamarin side customizations
+	Azure Chatbot supported Virtual Trainer. In addition to QnA the Multi-turn Bot uses the Dispatch Tool for best match determination including from LUIS apps 
+	A more conversational style using the latest Bot Framework tech such as adaptive dialogs, LUIS, LG and skillbots is under development currently.
+
+Fitness Guidance – Databricks/Spark Machine Learning
+	WIP - Intelligent fitness training guidance via Azure ML models developed using collected health, motion and location data. The general idea is to test out these models with Spark + Power BI and then fold these models into the Chat Bot backend
+DevOps
+	CI/CD pipelines are mostly built using the classic pipeline UI but later in the engagement resources like AKS clusters and Chat Bots are rolled out using Terraform and YAML builds & deployments
+Testing
+	Built a WPF based Azure IoT/Azure Service Bus Explorer from scratch to monitor data streaming in real time
+DR/HA
+	Chat Bot – Provided by a full alternate provisioning in another Azure region and DNS load balancing via Azure Traffic Manager
+	API Management + Azure Functions on AKS - Provided by a full alternate provisioning in another Azure region and DNS load balancing via Azure Traffic Manager
+	Azure IoT – In addition to the OOTB intra-region HA the plan is to leverage the Manual Failover provided by Azure at no extra cost with a periodic Manual Failover test
+	Azure Service Bus – For now using partitioned service bus topics in the standard SKU. The plan for DR is to switch to the Premium SKU which supports primary-secondary namespace pairing via geo-replication with the existing namespace before the upgrade transparently becoming the paired alias for client connections
+	Stream Analytics – Besides the OOTB SLA via MS geographically paired regions, additional options are TBD
+	Cosmos DB – Accomplished by leveraging the OOTB multiple region replication support by associating multiple regions with the global Cosmos DB resource and connecting with multi-master mode enabled
+	Web Apps in App Services – Azure Front Door is ideal for HTTP level routing with global failover. There have been some discussions about load balancing Azure API Management via AFD but no final plan yet
+
+
+Built applications for Monitoring & Managing Deep Sea Wells from Oil Rigs 
 -	Mobile Application (currently working on)
 o	Working on a POC where an Android Studio Iguana built application that connects via Bluetooth to an intelligent Arduino based Camera to pick images and video which is then sent to the ChatGPT GPT-Pro vision API for analysis 
 -	Solutions Architect
@@ -193,6 +236,7 @@ o	NIC - Pretty significant project for NIC for SQL Server Data replication from 
 o	Oxy Petroleum - Prepare a detailed topology for provisioning Network Performance & Application Insights based monitoring for Occidental Petroleum with sample Dashboards built around Azure Monitoring, Log Analytics plus the 3 monitors bundled as NPM
 -	Bot Services
 o	Houston School District - Helping accelerate development and deliveries for various software components of an MS effort around Safe Spaces which is a part of the overall Connected Cities vision https://www.microsoft.com/en-us/enterprise/citynext. My responsibility specifically was for the Xamarin Native iOS & Droid apps as well as the chatbot integration.  Azure IoT devices in the schools were the back bone of this solution based on the open-source Project Edison effort. 
+o	Navy Federal Credit Unions - Build a series of ChatBot skills for the bank to handle multiple aspects of customer banking needs like account info, direct deposits, money transfers via Zelle and more. Worked closely on a daily basis with the Microsoft Bot Framework & Composer Teams to coordinate resolving issues found in the MS Bot Tech stack as we built out the LUIS, QnA based bot skills. Also worked with the Navy’s security, Azure Cloud and other teams to help minimize any security vulnerabilities as well as confirm to the tight Navy and Banking security guidelines and mandates. Web Chat and a Live Person fronted Direct Line channels Support added
 
 Contribution Highlights
 MS Safe / Connected cities implementation for the Houston School District
@@ -201,7 +245,28 @@ Help in a 1000+ participant American Airlines Hackathon
 Gain ML experience with 2 client projects
 Gain experience with a very large Logic Apps client engagement
 
-Port of Long Beach (DevOps - Architect, Admin & Lead)                                                      Jan 2016 – Jul 2017, Long Beach, CA
+US Federal Reserve  (Architect, Team Lead)                 Jan 2017 – Jul 2017, San Francisco, CA
+	Mobile First & Managed Azure - Part of the team to set this practice up for the 12th district to carry out the Cloud & Mobile First strategy within the tight security guidelines of the federal banking system for Mac/Windows hard and soft tooling selection and approval, AirWatch and VS App Center adoption, Managed Microsoft Azure & Enterprise Mobility Governance/Cost/Services
+	Conference App Suite - App Styling and content in On-Prem SP2013 with data in On-Prem SQL Server. Backend NET Windows Service to send out registration, reminder emails and calendar invites. Angular Admin Application for Content Management. ASP.NET Core hand held bar code scanner application for badging in. First integration effort with the Fed Mulesoft API gateway.
+	Fed Ambassador App - Datastore is an SP Online Portal and leverages the Azure Key vault and Azure Storage. Auth is all OAuth and Azure Push Notification Service is used to send out user notifications
+	IAM Mobile App - An OKTA style SSO facilitating mobile application deployed internally on Fed Bank Phones
+Xamarin Forms, ASP.NET Core, MuleSoft, SP 2013, SQL Server, Windows Services, Azure App Service, Azure Keyvault, Azure Storage, Azure Functions, Azure Notifications, Angular 2, OCR, OAuth
+SDKs & Tooling – AirWatch and VS App Center, VS 2013/2015, MVVMCross
+
+Willdan Group  (Architect, Team Lead)           Aug 2016 – Dec  2016,  Anaheim CA
+Willdan provides consulting and implementation services across energy, infrastructure and transportation, municipal engineering, planning, and staff augmentation; economic and financial analysis, and homeland security and emergency management
+	BSA - Working directly for the Director of IT draw up a final report for executive management which included a list of all the different software applications big and small and the associated technologies running across all divisions of Willdan Group in the various offices around the US. Also captured end user pain points, application TCO including support level, source code availability and other many parameters like mission criticality of applications 
+	Architect: Assist IT in technology & vendor selection for inhouse replacement applications, planning and sizing Office 365 resources and federated Azure AD with Okta SSO, Site Topology security matrix along with the O365 Governance strategy
+	O365 Migration – Plan + design O365 portals for migrating the Internal Willdan Portal and the internal Willdan Helpdesk-Asset management application including best practices. Work with Dev team in migrating these to O365
+	Salesforce Integration - Identify O365 integration approaches with Salesforce using man in the middle REST API’s to surface Apex methods, 
+	ADP Integration - Employee account data import into Azure AD and integration with 
+	Deltek Costpoint Integration - Migrate all CostPoint Accounting Documents storage to O365 
+	Fishbowl Warehouse Management System Integration – Upgrade the Excel Forms UI and integrate with FishBowl API’s
+	SP Online Migration – Migrate the Internal WordPress based ordering system, internal intranet ASP.NET Webster Portal to SP2013 Online. O365 Search customizations was an important part of the projects
+-	Excel Forms application upgrade to support integration with Fishbowl warehouse management system
+Office 365 Cloud, Azure, Salesforce, SharePoint 2010, ASP.NET MVC, WCF, Angular 1, jQuery, OneDrive/Google Drive/Drobox API’s, MS Excel Forms
+
+Port of Long Beach (DevOps - Architect, Admin & Lead)                                                      Jan 2016 – Jul 2016, Long Beach, CA
 -	SP2010 / SP2013 Governance
 o	Help IT with SharePoint day to day admin work, patches and updates, farm provisioning, planning and execution of SQL Server 2005-2008 upgrade to SQL Server 2012-2014,
 o	NET & SharePoint application Prod rollout planning, approvals and the actual deployments!
@@ -376,7 +441,11 @@ Client List
 -	Effective Data (Biztalk-Sterling)
 -	Melaleuca
 -	Vanity Fair Corporation
--	Vizio (3 projects -SQL Server Master Data Services, SAP integration, VSTO Excel)
+-	Vizio (3 projects - SQL Server Master Data Services, SAP integration, VSTO Excel)
+  o	Vizio Creative Services - Project Approval Process using Custom Workflow with custom WF activities & associated InfoPath forms. Hosted WCF Services, Custom Ribbon Actions, Custom PDF Report generation using iTextSharp
+  o	Vizio SQL Server 2012 Master Data Services - Consolidate all corporate Master Data spread redundantly across multiple LOB applications like Pricing Bulletins, TM1, Reseller Selection Excel document libraries & SAP. Management of this data was facilitated via SP2010 BDC Services. MS Excel add-ins developed using VSTO to facilitate editing of MDS data by users in different departments using MS-office
+  o	Vizio Marketing Pricing - Supply chain extension and SAP integration project to help automate agreeing on price points and the management of the flow of all the contractual paperwork for Vizio products for large retailers like Walmart, Costco, Target. 
+
 -	Time Warner Cable
 -	McGladrey & Pullen
 -	Quantum
@@ -395,7 +464,7 @@ The EV1000 monitoring system is a monitoring platform that displays intermittent
 NET 3.5/ WPF, Embedded Windows XP
 Jul 07-Jan 09                       Hyundai / Kia Motors – Multiple Projects     (Architect/Developer)
                                              Hyundai Dealer Application. Changes and enhancement to this mission critical application
-  Hyundai Inner Circle B2C enterprise application with substantial integration using SOA silos with LOB systems. 
+                                             Hyundai Inner Circle B2C enterprise application with substantial integration using SOA silos with LOB systems like Oracle Financials as a part of the loan request management 
                                              Hyundai USA Site Assisted in multiple areas of the SDLC. WCF Restful services stack (dealer locator, vehicle, leads etc.). Content Management using Interwoven. Flash AS3 performance improvements (BYO, Navigation, Key Landing Pages). Load and Stress Testing. Google Search Appliance Integration
                                              SharePoint 2010 BI - Software Practice Revenue Reporting and BI Showcase Project                     
                                              BI reports and dashboards to facilitate quick views of quota, pipeline and backlog revenues for 
