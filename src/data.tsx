@@ -28,7 +28,7 @@ export const UIData: DataRow[] = [
       ], 
     },
     { 
-        "label": "System", 
+        "label": "Architecture", 
         "radioOptions": [
             { "label": "System", "value": "Please give me a summary of System Architecture Work" },
             { "label": "Option B", "value": "optionB" },
