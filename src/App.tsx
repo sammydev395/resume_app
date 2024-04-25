@@ -3,7 +3,7 @@ import './App.css';
 import { Table, TableRow, TableCell, TableBody, TableContainer, TableHead, Paper } from '@mui/material';
 import RadioButtonRow from './RadioButtonRow';
 import ResultsField from './ResultsField';
-import { UIData as data } from './data';
+import { UIData as data, resumeText } from './data';
 import FileLoader from './FileLoader';
 import OpenAIService from './Service/OpenAIService'
 
@@ -43,7 +43,7 @@ const App: React.FC = () => {
         </Table>
       </TableContainer>
       <ResultsField results={response} question={question} />
-      <OpenAIService fileContents={fileContents} question={question} setResponse={setResponse}></OpenAIService>
+      <OpenAIService fileContents={resumeText} question={question} setResponse={setResponse}></OpenAIService>
     </div>
   );
 }
