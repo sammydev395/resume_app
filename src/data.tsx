@@ -25,7 +25,7 @@ export const UIData: DataRow[] = [
             { "label": "WPF", "value": "Please list WPF work done for clients" },
             { "label": "Option B", "value": "optionB" },
             { "label": "Option C", "value": "optionC" }
-      ], 
+      ],  
     },
     { 
         "label": "Architecture", 
