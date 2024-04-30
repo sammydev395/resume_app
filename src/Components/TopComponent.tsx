@@ -3,11 +3,12 @@ import { styled } from '@mui/system';
 import { TextField, Button, Paper } from '@mui/material';
 
 const StyledResultsTextField = styled(TextField)`
-    max-width: 95%;
+    max-width: 90%;
+    margin: 8px;
 `;
 
 const SubmitButton = styled(Button)`
-  margin: 8px;
+  margin: 16px;
 `;
 
 interface TopComponentProps {
@@ -30,7 +31,7 @@ const TopComponent: React.FC<TopComponentProps> = ({ onSubmit }) => {
     <form onSubmit={handleFormSubmit}>
         <StyledResultsTextField
             variant="outlined"
-            label="Enter Query"
+            label="Enter any arbitrary query or use the query selector on the left below"
             fullWidth
             value={query}
             onChange={handleQueryChange}

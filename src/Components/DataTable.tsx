@@ -14,6 +14,10 @@ const StyledTable = styled(Table)`
   width: 100%;
 `;
 
+const StyledTableRow = styled(TableRow)`
+  height: 20;
+`;
+
 interface DataTableProps {
   data: TechData[];
   selectedOption: string;
@@ -27,11 +31,11 @@ const DataTable: React.FC<DataTableProps> = ({ data, selectedOption, handleSubmi
     <TableContainer>
       <StyledTable>
         <TableHead>
-            <TableRow>
+            <StyledTableRow>
               <ColoredHeaderCell>Technology</ColoredHeaderCell>
               <ColoredHeaderCell>Query Options</ColoredHeaderCell>
-              <ColoredHeaderCell>Submit</ColoredHeaderCell>
-            </TableRow>
+              <ColoredHeaderCell>Submit Query</ColoredHeaderCell>
+            </StyledTableRow>
         </TableHead>
         <TableBody>
             {selectedData?.details.map((rowData, index) => (

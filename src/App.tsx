@@ -33,17 +33,17 @@ const LeftRightContainer = styled('div')`
 
 const TopPanel = styled('div')`
 flex: 1;
-padding: 20px;
+padding: 5px;
 `;
 
 const LeftPanel = styled('div')`
-flex: 1;
-padding: 20px;
+flex: 0.7;
+padding: 5px;
 `;
 
 const RightPanel = styled('div')`
 flex: 1;
-padding: 20px;
+padding: 5px;
 `;
 
 const App: React.FC = () => {
