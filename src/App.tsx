@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { styled } from '@mui/system';
 import { Paper, Container } from '@mui/material';
 import './App.css';
+import TopComponent from './Components/TopComponent';
 import DataTable from './Components/DataTable';
 import ResultsField from './Components/ResultsField';
 import { UIData as data, resumeText } from './Data/data';
@@ -28,6 +29,11 @@ const MainContainer = styled('div')`
 
 const LeftRightContainer = styled('div')`
   display: flex;
+`;
+
+const TopPanel = styled('div')`
+flex: 1;
+padding: 20px;
 `;
 
 const LeftPanel = styled('div')`
@@ -58,7 +64,10 @@ const App: React.FC = () => {
   return (
     <MainContainer>
       <Header>ChatGPT AI Resume Reviewer</Header>
-      <FileLoader onFileLoaded={handleFileLoaded} />
+      {/* <FileLoader onFileLoaded={handleFileLoaded} /> */}
+      <TopPanel>
+        <TopComponent onSubmit={handleSubmit} />
+      </TopPanel>
       <RadioGroupContainer>
         <RadioField options={data.map(item => ({ key: item.label, value: item.label }))} 
                     selectedValue={selectedOption} 

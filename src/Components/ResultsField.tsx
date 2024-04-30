@@ -8,11 +8,11 @@ const StyledPaper = styled(Paper)`
 `;
 
 const ResultsHeader = styled(Typography)({
-  backgroundColor: '#f50057',
-  color: 'white',
-  padding: '20px 0',
+  width: '100%',
   textAlign: 'center',
+  backgroundColor: 'lightblue',
 });
+
 
 const StyledResultsTextField = styled(TextField)`
   margin-top: 20px;
@@ -21,7 +21,9 @@ const StyledResultsTextField = styled(TextField)`
 const ResultsField = ({ results, question }: { results: string, question: string }) => {
   return (
     <StyledPaper>
-      <ResultsHeader>Results {question}</ResultsHeader>
+      <ResultsHeader>
+        <Typography variant="h5">Results {question}</Typography>
+      </ResultsHeader>
       <StyledResultsTextField
         variant="outlined"
         value={results}
