@@ -1,15 +1,48 @@
 import React, { useEffect, useState } from 'react';
+import { styled } from '@mui/system';
+import { Paper, Container } from '@mui/material';
 import './App.css';
-import { Table, TableRow, TableCell, TableBody, TableContainer, TableHead, Paper } from '@mui/material';
-import RadioButtonRow from './RadioButtonRow';
-import ResultsField from './ResultsField';
-import { UIData as data, resumeText } from './data';
-import FileLoader from './FileLoader';
+import DataTable from './Components/DataTable';
+import ResultsField from './Components/ResultsField';
+import { UIData as data, resumeText } from './Data/data';
+import FileLoader from './Components/FileLoader';
 import OpenAIService from './Service/OpenAIService'
+import RadioField from './Components/RadioField';
+
+// Styled components using @mui/system
+const Header = styled('div')({
+  backgroundColor: '#2196f3',
+  color: 'white',
+  padding: '20px 0',
+  textAlign: 'center',
+  fontSize: '24px',
+});
+
+const RadioGroupContainer = styled('div')({
+  display: 'flex',
+  justifyContent: 'space-around',
+});
+
+const MainContainer = styled('div')`
+`;
+
+const LeftRightContainer = styled('div')`
+  display: flex;
+`;
+
+const LeftPanel = styled('div')`
+flex: 1;
+padding: 20px;
+`;
+
+const RightPanel = styled('div')`
+flex: 1;
+padding: 20px;
+`;
 
 const App: React.FC = () => {
-
   const [fileContents, setFileContents] = useState<string>('');
+  const [selectedOption, setSelectedOption] = useState(data[0].label);
   const [question, setQuestion] = useState<string>('');
   const [response, setResponse] = useState<string>('');
 
@@ -23,28 +56,24 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="App">
-      <h1>ChatGPT AI Resume Reviewer</h1>
+    <MainContainer>
+      <Header>ChatGPT AI Resume Reviewer</Header>
       <FileLoader onFileLoaded={handleFileLoaded} />
-      <br />
-      <TableContainer component={Paper}>
-        <Table>
-        <TableHead>
-            <TableRow>
-              <TableCell>Label</TableCell>
-              <TableCell>Radio Options</TableCell>
-              <TableCell>Submit</TableCell>
-            </TableRow>
-          </TableHead>          <TableBody>
-            {data.map((rowData, index) => (
-              <RadioButtonRow key={index} data={rowData} onSubmit={handleSubmit} />            
-            ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
-      <ResultsField results={response} question={question} />
+      <RadioGroupContainer>
+        <RadioField options={data.map(item => ({ key: item.label, value: item.label }))} 
+                    selectedValue={selectedOption} 
+                    onChange={setSelectedOption} />
+      </RadioGroupContainer>
+      <LeftRightContainer>
+        <LeftPanel>
+          <DataTable data={data} selectedOption={selectedOption} handleSubmit={handleSubmit} />
+        </LeftPanel>
+        <RightPanel>
+          <ResultsField results={response} question={question} />
+        </RightPanel>
+      </LeftRightContainer>
       <OpenAIService fileContents={resumeText} question={question} setResponse={setResponse}></OpenAIService>
-    </div>
+    </MainContainer>
   );
 }
 

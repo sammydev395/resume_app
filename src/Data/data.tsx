@@ -5,15 +5,52 @@ export interface RadioOption {
     value: string;
   }
   
-export interface DataRow {
+export interface TechDetailsDataRow {
     label: string;
-    radioOptions: RadioOption[];
+    options: RadioOption[];
   }
-  
-export const UIData: DataRow[] = [
+
+export const AzureUIData: TechDetailsDataRow[] = 
+[
+    { 
+        "label": "Azure Functions", 
+        "options": [
+            { "label": "By Project", "value": "Give me all projects where I used Azure" },
+            { "label": "By Year", "value": "Work done with Azure for each project in years" },
+            { "label": "Highlights", "value": "Contribution highlights specific to Azure" }
+      ], 
+    },
+    { 
+        "label": "Logic Apps", 
+        "options": [
+            { "label": "WPF", "value": "Please list WPF work done for clients" },
+            { "label": "Option B", "value": "optionB" },
+            { "label": "Option C", "value": "optionC" }
+      ],  
+    },
+    { 
+        "label": "Service Bus", 
+        "options": [
+            { "label": "System", "value": "Please give me a summary of System Architecture Work" },
+            { "label": "Option B", "value": "optionB" },
+            { "label": "Option C", "value": "optionC" }
+      ], 
+    },
+    { 
+        "label": "Web App", 
+        "options": [
+          { "label": "ERP Systems", "value": "Please give me a list of clients I did ERP work for" },
+          { "label": "Option B", "value": "optionB" },
+          { "label": "Option C", "value": "optionC" }
+    ], 
+  },
+];
+
+export const NetUIData: TechDetailsDataRow[] = 
+[
     { 
         "label": "Azure Work", 
-        "radioOptions": [
+        "options": [
             { "label": "By Project", "value": "Give me all projects where I used Azure" },
             { "label": "By Year", "value": "Work done with Azure for each project in years" },
             { "label": "Highlights", "value": "Contribution highlights specific to Azure" }
@@ -21,7 +58,7 @@ export const UIData: DataRow[] = [
     },
     { 
         "label": ".NET Work", 
-        "radioOptions": [
+        "options": [
             { "label": "WPF", "value": "Please list WPF work done for clients" },
             { "label": "Option B", "value": "optionB" },
             { "label": "Option C", "value": "optionC" }
@@ -29,12 +66,104 @@ export const UIData: DataRow[] = [
     },
     { 
         "label": "Architecture", 
-        "radioOptions": [
+        "options": [
             { "label": "System", "value": "Please give me a summary of System Architecture Work" },
             { "label": "Option B", "value": "optionB" },
             { "label": "Option C", "value": "optionC" }
       ], 
     },
+    { 
+      "label": "ERP", 
+      "options": [
+          { "label": "ERP Systems", "value": "Please give me a list of clients I did ERP work for" },
+          { "label": "Option B", "value": "optionB" },
+          { "label": "Option C", "value": "optionC" }
+    ], 
+  },
+];
+
+export const ArchitectureUIData: TechDetailsDataRow[] = 
+[
+    { 
+        "label": "Azure Work", 
+        "options": [
+            { "label": "By Project", "value": "Give me all projects where I used Azure" },
+            { "label": "By Year", "value": "Work done with Azure for each project in years" },
+            { "label": "Highlights", "value": "Contribution highlights specific to Azure" }
+      ], 
+    },
+    { 
+        "label": ".NET Work", 
+        "options": [
+            { "label": "WPF", "value": "Please list WPF work done for clients" },
+            { "label": "Option B", "value": "optionB" },
+            { "label": "Option C", "value": "optionC" }
+      ],  
+    },
+    { 
+        "label": "Architecture", 
+        "options": [
+            { "label": "System", "value": "Please give me a summary of System Architecture Work" },
+            { "label": "Option B", "value": "optionB" },
+            { "label": "Option C", "value": "optionC" }
+      ], 
+    },
+    { 
+      "label": "ERP", 
+      "options": [
+          { "label": "ERP Systems", "value": "Please give me a list of clients I did ERP work for" },
+          { "label": "Option B", "value": "optionB" },
+          { "label": "Option C", "value": "optionC" }
+    ], 
+  },
+];
+
+export const ERPUIData: TechDetailsDataRow[] = 
+[
+    { 
+        "label": "Azure Work", 
+        "options": [
+            { "label": "By Project", "value": "Give me all projects where I used Azure" },
+            { "label": "By Year", "value": "Work done with Azure for each project in years" },
+            { "label": "Highlights", "value": "Contribution highlights specific to Azure" }
+      ], 
+    },
+    { 
+        "label": ".NET Work", 
+        "options": [
+            { "label": "WPF", "value": "Please list WPF work done for clients" },
+            { "label": "Option B", "value": "optionB" },
+            { "label": "Option C", "value": "optionC" }
+      ],  
+    },
+    { 
+        "label": "Architecture", 
+        "options": [
+            { "label": "System", "value": "Please give me a summary of System Architecture Work" },
+            { "label": "Option B", "value": "optionB" },
+            { "label": "Option C", "value": "optionC" }
+      ], 
+    },
+    { 
+      "label": "ERP", 
+      "options": [
+          { "label": "ERP Systems", "value": "Please give me a list of clients I did ERP work for" },
+          { "label": "Option B", "value": "optionB" },
+          { "label": "Option C", "value": "optionC" }
+    ], 
+  },
+];
+
+export type TechData = {
+  label: string;
+  details: TechDetailsDataRow[];
+};
+
+export const UIData: TechData[] = [
+  { label: 'Azure Work', details: AzureUIData  },
+  { label: '.NET Work', details: NetUIData },
+  { label: 'Architecture', details: ArchitectureUIData },
+  { label: 'ERP', details: ERPUIData }
 ];
 
 export const  resumeText = `DrFit Cloud Architecture 🔎
