@@ -48,7 +48,7 @@ interface HeaderProps {
   githubLink?: string;
   linkedinLink?: string;
   skypeLink?: string;
-  fileName: string;
+  fileName?: string;
 }
 
 const Header: React.FC<HeaderProps> = ({ name, phoneNumber, title, githubLink, linkedinLink, skypeLink, fileName }) => {
@@ -65,7 +65,7 @@ const Header: React.FC<HeaderProps> = ({ name, phoneNumber, title, githubLink, l
     link.href = fileUrl;
 
     // Set the download attribute to specify the filename
-    link.setAttribute('download', fileName);
+    link.setAttribute('download', fileUrl);
     link.setAttribute('target', '_blank');
 
     // Append the link to the document body

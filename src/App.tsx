@@ -69,7 +69,7 @@ const App: React.FC = () => {
         githubLink='https://github.com/sammydev395/resume_app/tree/master' 
         linkedinLink='https://www.linkedin.com/in/drdev-inc-usa-82679b3?' 
         skypeLink='https://join.skype.com/invite/q9ykQHFsfXLd' 
-        fileName='https://docs.google.com/document/d/1GEAVx9S7Gb1mfyOtRpJvnRJ61Ih9c8jM/edit?usp=drive_link&ouid=113654978354026672227&rtpof=true&sd=true'/>
+        fileName='SammyDev'/>
       {/* <FileLoader onFileLoaded={handleFileLoaded} /> */}
       <TopPanel>
         <TopComponent onSubmit={handleSubmit} />
