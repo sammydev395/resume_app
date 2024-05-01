@@ -53,13 +53,14 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ name, phoneNumber, title, githubLink, linkedinLink, skypeLink, fileName }) => {
 
+  // Replace 'example.docx' with the name of your Word document
+  const fileUrl = `${process.env.PUBLIC_URL}/${fileName}.docx`;
+
   // Function to handle file download
   const handleDownload = () => {
+    return;
     console.log('Download resume');
     
-    // Replace 'example.docx' with the name of your Word document
-    const fileUrl = `${process.env.PUBLIC_URL}/${fileName}.docx`;
-
     // Create a link element
     const link = document.createElement('a');
     link.href = fileUrl;
@@ -83,7 +84,7 @@ const Header: React.FC<HeaderProps> = ({ name, phoneNumber, title, githubLink, l
       <HeaderContent>
         <LeftContent>
           <Tooltip title="Download Resume as a Word Document">
-            <NameLink href="#" onClick={handleDownload}>
+            <NameLink href={fileUrl} onClick={handleDownload}>
               {name}
             </NameLink> 
           </Tooltip>
