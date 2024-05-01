@@ -64,7 +64,12 @@ const App: React.FC = () => {
 
   return (
     <MainContainer>
-      <Header name='Sammy Dev' phoneNumber='(714) 768 4794' title='ChatGPT AI Resume Reviewer' githubLink='https://github.com/sammydev395/resume_app/tree/master' linkedinLink='https://www.linkedin.com/in/drdev-inc-usa-82679b3?' skypeLink='https://join.skype.com/invite/q9ykQHFsfXLd' fileName='SammyDev'/>
+      <Header name='Sammy Dev' phoneNumber='(714) 768 4794' 
+        title='ChatGPT AI Resume Reviewer' 
+        githubLink='https://github.com/sammydev395/resume_app/tree/master' 
+        linkedinLink='https://www.linkedin.com/in/drdev-inc-usa-82679b3?' 
+        skypeLink='https://join.skype.com/invite/q9ykQHFsfXLd' 
+        fileName='SammyDev'/>
       {/* <FileLoader onFileLoaded={handleFileLoaded} /> */}
       <TopPanel>
         <TopComponent onSubmit={handleSubmit} />

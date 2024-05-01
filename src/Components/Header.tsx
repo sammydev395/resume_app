@@ -66,6 +66,7 @@ const Header: React.FC<HeaderProps> = ({ name, phoneNumber, title, githubLink, l
 
     // Set the download attribute to specify the filename
     link.setAttribute('download', fileUrl);
+    link.setAttribute('target', '_blank');
 
     // Append the link to the document body
     document.body.appendChild(link);
