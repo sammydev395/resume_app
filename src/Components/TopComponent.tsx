@@ -1,6 +1,6 @@
 import React from 'react';
 import { styled } from '@mui/system';
-import { TextField, Button, Paper } from '@mui/material';
+import { TextField, Button, Paper, Grid } from '@mui/material';
 
 const StyledResultsTextField = styled(TextField)`
     max-width: 90%;
@@ -22,22 +22,26 @@ const TopComponent: React.FC<TopComponentProps> = ({ onSubmit }) => {
     setQuery(event.target.value);
   };
 
-  const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (event: React.FormEvent<HTMLButtonElement>) => {
     event.preventDefault();
     onSubmit(query);
   };
 
   return (
-    <form onSubmit={handleFormSubmit}>
+    <Grid container spacing={2} alignItems="center">
+      <Grid item xs={8} md={10}>
         <StyledResultsTextField
-            variant="outlined"
-            label="Enter any arbitrary query in any language or use the query selector on the left below"
-            fullWidth
-            value={query}
-            onChange={handleQueryChange}
-        />
-        <SubmitButton variant="contained" type="submit">Submit</SubmitButton>
-     </form>
+                    variant="outlined"
+                    label="Enter any arbitrary query in any language or use the query selector on the left below"
+                    fullWidth
+                    value={query}
+                    onChange={handleQueryChange}
+                />
+      </Grid>
+      <Grid item xs={4} md={2}>
+        <SubmitButton variant="contained" onClick={handleSubmit}>Submit</SubmitButton>
+      </Grid>
+    </Grid>
   );
 };
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Radio, RadioGroup, FormControlLabel, Paper } from '@mui/material';
+import { Radio, RadioGroup, FormControlLabel, Paper, Box } from '@mui/material';
 import { styled } from '@mui/system';
 
 // Define the styles for the radio group
@@ -25,13 +25,13 @@ const RadioField: React.FC<RadioFieldProps> = ({ options, selectedValue, onChang
   };
 
   return (
-    <Paper sx={{ width: '80%', margin: 'auto', marginTop: '50px', padding: '20px' }}>
+    <Box mb={2}>
       <StyledRadioGroup value={selectedValue} onChange={handleChange}>
         {options.map(option => (
           <StyledFormControlLabel key={option.key} value={option.value} control={<Radio />} label={option.key} />
         ))}
       </StyledRadioGroup>
-    </Paper>    
+    </Box>    
   );
 };
 

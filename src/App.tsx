@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { styled } from '@mui/system';
-import { Paper, Container } from '@mui/material';
+import { Paper, Container, Grid } from '@mui/material';
 import './App.css';
 import Header from './Components/Header';
 import TopComponent from './Components/TopComponent';
@@ -64,7 +64,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <MainContainer>
+    <Container maxWidth="lg">
       <Header name='Sammy Dev' phoneNumber='(714) 768 4794' 
         title='ChatGPT AI Resume Reviewer' 
         githubLink='https://github.com/sammydev395/resume_app/tree/master' 
@@ -72,25 +72,23 @@ const App: React.FC = () => {
         skypeLink='https://join.skype.com/invite/q9ykQHFsfXLd' 
         fileName='SammyDev'/>
       {/* <FileLoader onFileLoaded={handleFileLoaded} /> */}
-      <TopPanel>
-        <TopComponent onSubmit={handleSubmit} />
-      </TopPanel>
+      <TopComponent onSubmit={handleSubmit} />
       <RadioGroupContainer>
         <RadioField options={data.map(item => ({ key: item.label, value: item.label }))} 
                     selectedValue={selectedOption} 
                     onChange={setSelectedOption} />
       </RadioGroupContainer>
-      <LeftRightContainer>
-        <LeftPanel>
+      <Grid container spacing={2}>
+        <Grid item xs={12} md={6}>          
           <DataTable data={data} selectedOption={selectedOption} handleSubmit={handleSubmit} />
-        </LeftPanel>
-        <RightPanel>
+        </Grid>
+        <Grid item xs={12} md={6}>
           <ResultsField results={response} question={question} />
-        </RightPanel>
-      </LeftRightContainer>
+        </Grid>
+      </Grid>
       <OpenAIService fileContents={resumeText} question={question} setResponse={setResponse}></OpenAIService>
       <SpeedInsights/>
-    </MainContainer>
+    </Container>
   );
 }
 

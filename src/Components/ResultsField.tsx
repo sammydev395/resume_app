@@ -1,4 +1,4 @@
-import { TextField, Paper, styled, Typography } from '@mui/material';
+import { TextField, Paper, styled, Typography, Box } from '@mui/material';
 import React from 'react';
 
 const StyledPaper = styled(Paper)`
@@ -19,22 +19,23 @@ const StyledResultsTextField = styled(TextField)`
 `;
 
 const ResultsField = ({ results, question }: { results: string, question: string }) => {
+
   return (
-    <StyledPaper>
-      <ResultsHeader>
-        <Typography variant="h5">Results {question}</Typography>
+    <Box display="flex" flexDirection="column" alignItems="center">
+      <ResultsHeader variant="h6" mb={2}>
+        Results {question}
       </ResultsHeader>
-      <StyledResultsTextField
+      <TextField
         variant="outlined"
-        value={results}
         multiline
-        fullWidth 
-        rows={30}
+        fullWidth
+        rows={40}
+        value={results}
         InputProps={{
           readOnly: true,
         }}
-      />      
-    </StyledPaper>
+      />
+    </Box>
   );
 };
 
