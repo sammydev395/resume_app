@@ -281,12 +281,12 @@ export const UIData: TechData[] = [
   { label: '.NET', details: NetUIData },
   { label: 'Architecture', details: ArchitectureUIData },
   { label: 'Languages', details: LanguagesUIData },
-  { label: 'Libraries & SDKs', details: SDKSUIData },
+  { label: 'SDKs', details: SDKSUIData },
   { label: 'O365', details: O365UIData },
   { label: 'Devops', details: DevOpsUIData },
   { label: 'Storage', details: StorageUIData },
   { label: 'Protocols', details: ProtocolsUIData },
-  { label: 'IDE``s & More', details: IDEsUIData },
+  { label: 'IDE``s', details: IDEsUIData },
   { label: 'OS', details: OSUIData }
   
 ];
