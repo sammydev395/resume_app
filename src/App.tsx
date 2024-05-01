@@ -10,6 +10,7 @@ import { UIData as data, resumeText } from './Data/data';
 import FileLoader from './Components/FileLoader';
 import OpenAIService from './Service/OpenAIService'
 import RadioField from './Components/RadioField';
+import { SpeedInsights } from "@vercel/speed-insights/react"
 
 // Styled components using @mui/system
 const AHeader = styled('div')({
@@ -88,6 +89,7 @@ const App: React.FC = () => {
         </RightPanel>
       </LeftRightContainer>
       <OpenAIService fileContents={resumeText} question={question} setResponse={setResponse}></OpenAIService>
+      <SpeedInsights/>
     </MainContainer>
   );
 }
