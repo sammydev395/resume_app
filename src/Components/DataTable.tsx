@@ -47,7 +47,7 @@ const DataTable: React.FC<DataTableProps> = ({ data, selectedOption, handleSubmi
               <StyledTableRow>
                 <ColoredHeaderCell>
                   <IconButton onClick={toggleCollapse}>
-                    {isCollapsed ? <ExpandMore /> : <ExpandLess />}
+                    {!isCollapsed ? <ExpandMore /> : <ExpandLess />}
                   </IconButton>
                   Technology
                 </ColoredHeaderCell>
