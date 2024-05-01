@@ -33,6 +33,7 @@ const NameLink = styled('a')`
   font-weight: bold;
   margin-right: 10px;
   tooltip: {'Sammy Dev Resume Download'}
+  target: {'_blank'}
 `;
 
 // Styled link for the phone number
@@ -54,7 +55,7 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ name, phoneNumber, title, githubLink, linkedinLink, skypeLink, fileName }) => {
 
   // Replace 'example.docx' with the name of your Word document
-  const fileUrl = `${process.env.PUBLIC_URL}/${fileName}.docx`;
+  const fileUrl = `${process.env.PUBLIC_URL}/${fileName}.pdf`;
 
   // Function to handle file download
   const handleDownload = () => {
@@ -83,7 +84,7 @@ const Header: React.FC<HeaderProps> = ({ name, phoneNumber, title, githubLink, l
     <HeaderContainer position="static">
       <HeaderContent>
         <LeftContent>
-          <Tooltip title="Download Resume as a Word Document">
+          <Tooltip title="Download Resume as a PDF Document">
             <NameLink href={fileUrl} onClick={handleDownload}>
               {name}
             </NameLink> 
