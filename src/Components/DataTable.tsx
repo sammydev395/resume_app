@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { styled } from '@mui/system';
 import { Table, TableHead, TableBody, TableCell, TableContainer, TableRow, Paper, Button, IconButton, useMediaQuery } from '@mui/material';
 import { ExpandLess, ExpandMore } from '@mui/icons-material';
@@ -31,6 +31,10 @@ const DataTable: React.FC<DataTableProps> = ({ data, selectedOption, handleSubmi
   const [isCollapsed, setIsCollapsed] = useState(false);
   const isMobile = useMediaQuery('(max-width:600px)');
   
+  useEffect(() => {
+    setIsCollapsed(false);
+  }, [selectedOption]);
+
   const toggleCollapse = () => {
     setIsCollapsed(!isCollapsed);
   };
