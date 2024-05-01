@@ -1,9 +1,7 @@
 import React from 'react';
 import { styled } from '@mui/system';
 import { AppBar, Toolbar, Typography, IconButton, Link, Tooltip } from '@mui/material';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import SkypeIcon from '@mui/icons-material/StickyNote2Sharp';
+import { LinkedIn, GitHub, Phone, GetApp, StickyNote2Sharp } from '@mui/icons-material';
 
 // Styled container for the header
 const HeaderContainer = styled(AppBar)`
@@ -28,6 +26,21 @@ const RightContent = styled('div')`
   align-items: center;
 `;
 
+// Styled link for the name
+const NameLink = styled('a')`
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  margin-right: 10px;
+  tooltip: {'Sammy Dev Resume Download'}
+`;
+
+// Styled link for the phone number
+const PhoneLink = styled('a')`
+  text-decoration: none;
+  color: black;
+`;
+
 interface HeaderProps {
   name: string;
   phoneNumber: string;
@@ -35,17 +48,48 @@ interface HeaderProps {
   githubLink?: string;
   linkedinLink?: string;
   skypeLink?: string;
+  fileName?: string;
 }
 
-const Header: React.FC<HeaderProps> = ({ name, phoneNumber, title, githubLink, linkedinLink, skypeLink }) => {
+const Header: React.FC<HeaderProps> = ({ name, phoneNumber, title, githubLink, linkedinLink, skypeLink, fileName }) => {
+
+  // Function to handle file download
+  const handleDownload = () => {
+    console.log('Download resume');
+    
+    // Replace 'example.docx' with the name of your Word document
+    const fileUrl = `${process.env.PUBLIC_URL}/${fileName}.docx`;
+
+    // Create a link element
+    const link = document.createElement('a');
+    link.href = fileUrl;
+
+    // Set the download attribute to specify the filename
+    link.setAttribute('download', fileUrl);
+
+    // Append the link to the document body
+    document.body.appendChild(link);
+
+    // Trigger the click event to initiate the download
+    link.click();
+
+    // Remove the link from the document body after download
+    document.body.removeChild(link);
+  };
+
   return (
     <HeaderContainer position="static">
       <HeaderContent>
         <LeftContent>
-          {name} &nbsp;
-          <Link href={`tel:${phoneNumber}`} color="inherit" underline="hover">
-           {phoneNumber}
-          </Link>
+          <Tooltip title="Download Resume as a Word Document">
+            <NameLink href="#" onClick={handleDownload}>
+              {name}
+            </NameLink> 
+          </Tooltip>
+          <PhoneLink href={`tel:${phoneNumber}`}>
+            <Phone />
+            {phoneNumber}
+          </PhoneLink>
         </LeftContent>
         <Typography variant="h6" component="div">
           {title}
@@ -54,21 +98,21 @@ const Header: React.FC<HeaderProps> = ({ name, phoneNumber, title, githubLink, l
           {githubLink && (
             <Tooltip title="Get source code for this AI resume reviwer on GitHub">
               <IconButton color="inherit" href={githubLink} target="_blank" rel="noopener noreferrer">
-                <GitHubIcon />
+                <GitHub />
               </IconButton>
             </Tooltip>
           )}
           {linkedinLink && (
             <Tooltip title="LinkedIn">
               <IconButton color="inherit" href={linkedinLink} target="_blank" rel="noopener noreferrer">
-                <LinkedInIcon />
+                <LinkedIn />
               </IconButton>
             </Tooltip>
           )}
           {skypeLink && (
             <Tooltip title="Skype">
               <IconButton color="inherit" href={skypeLink} target="_blank" rel="noopener noreferrer">
-                <SkypeIcon />
+                <StickyNote2Sharp />
               </IconButton>
             </Tooltip>
           )}
