@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { styled } from '@mui/system';
 import { Paper, Container } from '@mui/material';
 import './App.css';
+import Header from './Components/Header';
 import TopComponent from './Components/TopComponent';
 import DataTable from './Components/DataTable';
 import ResultsField from './Components/ResultsField';
@@ -11,7 +12,7 @@ import OpenAIService from './Service/OpenAIService'
 import RadioField from './Components/RadioField';
 
 // Styled components using @mui/system
-const Header = styled('div')({
+const AHeader = styled('div')({
   backgroundColor: '#2196f3',
   color: 'white',
   padding: '20px 0',
@@ -63,7 +64,7 @@ const App: React.FC = () => {
 
   return (
     <MainContainer>
-      <Header>ChatGPT AI Resume Reviewer</Header>
+      <Header name='Sammy Dev' phoneNumber='(714) 768 4794' title='ChatGPT AI Resume Reviewer' githubLink='https://github.com/sammydev395/resume_app/tree/master' linkedinLink='https://www.linkedin.com/in/drdev-inc-usa-82679b3?' skypeLink='https://join.skype.com/invite/q9ykQHFsfXLd'></Header>
       {/* <FileLoader onFileLoaded={handleFileLoaded} /> */}
       <TopPanel>
         <TopComponent onSubmit={handleSubmit} />
