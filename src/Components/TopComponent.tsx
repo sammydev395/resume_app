@@ -31,7 +31,7 @@ const TopComponent: React.FC<TopComponentProps> = ({ onSubmit }) => {
     <form onSubmit={handleFormSubmit}>
         <StyledResultsTextField
             variant="outlined"
-            label="Enter any arbitrary query or use the query selector on the left below"
+            label="Enter any arbitrary query in any language or use the query selector on the left below"
             fullWidth
             value={query}
             onChange={handleQueryChange}

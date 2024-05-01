@@ -154,16 +154,141 @@ export const ERPUIData: TechDetailsDataRow[] =
   },
 ];
 
+export const AIMLUIData: TechDetailsDataRow[] = 
+[
+    { 
+        "label": "AI/ML", 
+        "options": [
+            { "label": "By Project", "value": "Give me all projects where I used Azure" },
+            { "label": "By Year", "value": "Work done with Azure for each project in years" },
+            { "label": "Highlights", "value": "Contribution highlights specific to Azure" }
+      ], 
+    }
+];
+
+export const LanguagesUIData: TechDetailsDataRow[] = 
+[
+    { 
+        "label": "Azure", 
+        "options": [
+            { "label": "By Project", "value": "Give me all projects where I used Azure" },
+            { "label": "By Year", "value": "Work done with Azure for each project in years" },
+            { "label": "Highlights", "value": "Contribution highlights specific to Azure" }
+      ], 
+    },
+    { 
+        "label": ".NET", 
+        "options": [
+            { "label": "WPF", "value": "Please list WPF work done for clients" },
+            { "label": "Option B", "value": "optionB" },
+            { "label": "Option C", "value": "optionC" }
+      ],  
+  },
+];
+
+export const SDKSUIData: TechDetailsDataRow[] = 
+[
+    { 
+        "label": "Libraries & SDK's", 
+        "options": [
+            { "label": "By Project", "value": "Give me all projects where I used Azure" },
+            { "label": "By Year", "value": "Work done with Azure for each project in years" },
+            { "label": "Highlights", "value": "Contribution highlights specific to Azure" }
+      ], 
+    }
+];
+
+export const O365UIData: TechDetailsDataRow[] = 
+[
+    { 
+        "label": "O365", 
+        "options": [
+            { "label": "By Project", "value": "Give me all projects where I used Azure" },
+            { "label": "By Year", "value": "Work done with Azure for each project in years" },
+            { "label": "Highlights", "value": "Contribution highlights specific to Azure" }
+      ], 
+    }
+];
+
+export const DevOpsUIData: TechDetailsDataRow[] = 
+[
+    { 
+        "label": "O365", 
+        "options": [
+            { "label": "By Project", "value": "Give me all projects where I used Azure" },
+            { "label": "By Year", "value": "Work done with Azure for each project in years" },
+            { "label": "Highlights", "value": "Contribution highlights specific to Azure" }
+      ], 
+    }
+];
+
+export const StorageUIData: TechDetailsDataRow[] = 
+[
+    { 
+        "label": "Storage", 
+        "options": [
+            { "label": "By Project", "value": "Give me all projects where I used Azure" },
+            { "label": "By Year", "value": "Work done with Azure for each project in years" },
+            { "label": "Highlights", "value": "Contribution highlights specific to Azure" }
+      ], 
+    }
+];
+
+export const ProtocolsUIData: TechDetailsDataRow[] = 
+[
+    { 
+        "label": "Protocols", 
+        "options": [
+            { "label": "By Project", "value": "Give me all projects where I used Azure" },
+            { "label": "By Year", "value": "Work done with Azure for each project in years" },
+            { "label": "Highlights", "value": "Contribution highlights specific to Azure" }
+      ], 
+    }
+];
+
+export const IDEsUIData: TechDetailsDataRow[] = 
+[
+    { 
+        "label": "IDE''s & More", 
+        "options": [
+            { "label": "By Project", "value": "Give me all projects where I used Azure" },
+            { "label": "By Year", "value": "Work done with Azure for each project in years" },
+            { "label": "Highlights", "value": "Contribution highlights specific to Azure" }
+      ], 
+    }
+];
+
+export const OSUIData: TechDetailsDataRow[] = 
+[
+    { 
+        "label": "OS", 
+        "options": [
+            { "label": "By Project", "value": "Give me all projects where I used Azure" },
+            { "label": "By Year", "value": "Work done with Azure for each project in years" },
+            { "label": "Highlights", "value": "Contribution highlights specific to Azure" }
+      ], 
+    }
+];
+
 export type TechData = {
   label: string;
   details: TechDetailsDataRow[];
 };
 
 export const UIData: TechData[] = [
-  { label: 'Azure Work', details: AzureUIData  },
-  { label: '.NET Work', details: NetUIData },
+  { label: 'AI/ML', details: AIMLUIData },
+  { label: 'Azure', details: AzureUIData  },
+  { label: '.NET', details: NetUIData },
   { label: 'Architecture', details: ArchitectureUIData },
-  { label: 'ERP', details: ERPUIData }
+  { label: 'Languages', details: LanguagesUIData },
+  { label: 'Libraries & SDKs', details: SDKSUIData },
+  { label: 'O365', details: O365UIData },
+  { label: 'Devops', details: DevOpsUIData },
+  { label: 'Storage', details: StorageUIData },
+  { label: 'Protocols', details: ProtocolsUIData },
+  { label: 'IDE``s & More', details: IDEsUIData },
+  { label: 'OS', details: OSUIData }
+  
 ];
 
 export const  resumeText = `DrFit Cloud Architecture 🔎
