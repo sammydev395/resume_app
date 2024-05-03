@@ -29,7 +29,7 @@ const OpenAIService: React.FC<OpenAIServiceProps> =  ({ fileContents, question, 
         const chatCompletion = await openai.chat.completions.create({
           model: 'gpt-3.5-turbo',
           messages: [ { "role": "system", "content": fileContents }, { "role": "user", "content": question } ], 
-          max_tokens: 500,  // Max amount of tokens the AI will respond with
+          max_tokens: 2000,  // Max amount of tokens the AI will respond with
           top_p: 1,
           frequency_penalty: 0,
           presence_penalty: 0,

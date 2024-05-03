@@ -1,274 +1,386 @@
 import React, { useState } from 'react';
 
 export interface RadioOption {
-    label: string;
-    value: string;
-  }
-  
+  label: string;
+  value: string;
+}
+
 export interface TechDetailsDataRow {
-    label: string;
-    options: RadioOption[];
-  }
+  label: string;
+  options: RadioOption[];
+}
 
-export const AzureUIData: TechDetailsDataRow[] = 
-[
-    { 
-        "label": "Azure Functions", 
-        "options": [
-            { "label": "By Project", "value": "Give me all projects where I used Azure" },
-            { "label": "By Year", "value": "Work done with Azure for each project in years" },
-            { "label": "Highlights", "value": "Contribution highlights specific to Azure" }
-      ], 
-    },
-    { 
-        "label": "Logic Apps", 
-        "options": [
-            { "label": "WPF", "value": "Please list WPF work done for clients" },
-            { "label": "Option B", "value": "optionB" },
-            { "label": "Option C", "value": "optionC" }
-      ],  
-    },
-    { 
-        "label": "Service Bus", 
-        "options": [
-            { "label": "System", "value": "Please give me a summary of System Architecture Work" },
-            { "label": "Option B", "value": "optionB" },
-            { "label": "Option C", "value": "optionC" }
-      ], 
-    },
-    { 
-        "label": "Web App", 
-        "options": [
-          { "label": "ERP Systems", "value": "Please give me a list of clients I did ERP work for" },
-          { "label": "Option B", "value": "optionB" },
-          { "label": "Option C", "value": "optionC" }
-    ], 
-  },
-];
-
-export const NetUIData: TechDetailsDataRow[] = 
-[
-    { 
-        "label": "Azure Work", 
-        "options": [
-            { "label": "By Project", "value": "Give me all projects where I used Azure" },
-            { "label": "By Year", "value": "Work done with Azure for each project in years" },
-            { "label": "Highlights", "value": "Contribution highlights specific to Azure" }
-      ], 
-    },
-    { 
-        "label": ".NET Work", 
-        "options": [
-            { "label": "WPF", "value": "Please list WPF work done for clients" },
-            { "label": "Option B", "value": "optionB" },
-            { "label": "Option C", "value": "optionC" }
-      ],  
-    },
-    { 
-        "label": "Architecture", 
-        "options": [
-            { "label": "System", "value": "Please give me a summary of System Architecture Work" },
-            { "label": "Option B", "value": "optionB" },
-            { "label": "Option C", "value": "optionC" }
-      ], 
-    },
-    { 
-      "label": "ERP", 
+export const AzureUIData: TechDetailsDataRow[] =
+  [
+    {
+      "label": "Azure Functions",
       "options": [
-          { "label": "ERP Systems", "value": "Please give me a list of clients I did ERP work for" },
-          { "label": "Option B", "value": "optionB" },
-          { "label": "Option C", "value": "optionC" }
-    ], 
-  },
-];
-
-export const ArchitectureUIData: TechDetailsDataRow[] = 
-[
-    { 
-        "label": "Azure Work", 
-        "options": [
-            { "label": "By Project", "value": "Give me all projects where I used Azure" },
-            { "label": "By Year", "value": "Work done with Azure for each project in years" },
-            { "label": "Highlights", "value": "Contribution highlights specific to Azure" }
-      ], 
+        { "label": "By Project", "value": "Give me all projects where I used Azure" },
+        { "label": "By Year", "value": "Work done with Azure for each project in years" },
+        { "label": "Highlights", "value": "Contribution highlights specific to Azure" }
+      ],
     },
-    { 
-        "label": ".NET Work", 
-        "options": [
-            { "label": "WPF", "value": "Please list WPF work done for clients" },
-            { "label": "Option B", "value": "optionB" },
-            { "label": "Option C", "value": "optionC" }
-      ],  
-    },
-    { 
-        "label": "Architecture", 
-        "options": [
-            { "label": "System", "value": "Please give me a summary of System Architecture Work" },
-            { "label": "Option B", "value": "optionB" },
-            { "label": "Option C", "value": "optionC" }
-      ], 
-    },
-    { 
-      "label": "ERP", 
+    {
+      "label": "Logic Apps",
       "options": [
-          { "label": "ERP Systems", "value": "Please give me a list of clients I did ERP work for" },
-          { "label": "Option B", "value": "optionB" },
-          { "label": "Option C", "value": "optionC" }
-    ], 
-  },
-];
-
-export const ERPUIData: TechDetailsDataRow[] = 
-[
-    { 
-        "label": "Azure Work", 
-        "options": [
-            { "label": "By Project", "value": "Give me all projects where I used Azure" },
-            { "label": "By Year", "value": "Work done with Azure for each project in years" },
-            { "label": "Highlights", "value": "Contribution highlights specific to Azure" }
-      ], 
+        { "label": "WPF", "value": "Please list WPF work done for clients" },
+        { "label": "Option B", "value": "optionB" },
+        { "label": "Option C", "value": "optionC" }
+      ],
     },
-    { 
-        "label": ".NET Work", 
-        "options": [
-            { "label": "WPF", "value": "Please list WPF work done for clients" },
-            { "label": "Option B", "value": "optionB" },
-            { "label": "Option C", "value": "optionC" }
-      ],  
-    },
-    { 
-        "label": "Architecture", 
-        "options": [
-            { "label": "System", "value": "Please give me a summary of System Architecture Work" },
-            { "label": "Option B", "value": "optionB" },
-            { "label": "Option C", "value": "optionC" }
-      ], 
-    },
-    { 
-      "label": "ERP", 
+    {
+      "label": "Service Bus",
       "options": [
-          { "label": "ERP Systems", "value": "Please give me a list of clients I did ERP work for" },
-          { "label": "Option B", "value": "optionB" },
-          { "label": "Option C", "value": "optionC" }
-    ], 
-  },
-];
-
-export const AIMLUIData: TechDetailsDataRow[] = 
-[
-    { 
-        "label": "AI/ML", 
-        "options": [
-            { "label": "By Project", "value": "Give me all projects where I used Azure" },
-            { "label": "By Year", "value": "Work done with Azure for each project in years" },
-            { "label": "Highlights", "value": "Contribution highlights specific to Azure" }
-      ], 
-    }
-];
-
-export const LanguagesUIData: TechDetailsDataRow[] = 
-[
-    { 
-        "label": "Azure", 
-        "options": [
-            { "label": "By Project", "value": "Give me all projects where I used Azure" },
-            { "label": "By Year", "value": "Work done with Azure for each project in years" },
-            { "label": "Highlights", "value": "Contribution highlights specific to Azure" }
-      ], 
+        { "label": "System", "value": "Please give me a summary of System Architecture Work" },
+        { "label": "Option B", "value": "optionB" },
+        { "label": "Option C", "value": "optionC" }
+      ],
     },
-    { 
-        "label": ".NET", 
-        "options": [
-            { "label": "WPF", "value": "Please list WPF work done for clients" },
-            { "label": "Option B", "value": "optionB" },
-            { "label": "Option C", "value": "optionC" }
-      ],  
-  },
-];
+    {
+      "label": "Web App",
+      "options": [
+        { "label": "ERP Systems", "value": "Please give me a list of clients I did ERP work for" },
+        { "label": "Option B", "value": "optionB" },
+        { "label": "Option C", "value": "optionC" }
+      ],
+    },
+  ];
 
-export const SDKSUIData: TechDetailsDataRow[] = 
-[
-    { 
-        "label": "Libraries & SDK's", 
-        "options": [
-            { "label": "By Project", "value": "Give me all projects where I used Azure" },
-            { "label": "By Year", "value": "Work done with Azure for each project in years" },
-            { "label": "Highlights", "value": "Contribution highlights specific to Azure" }
-      ], 
-    }
-];
+export const NetUIData: TechDetailsDataRow[] =
+  [
+    {
+      "label": "Azure Work",
+      "options": [
+        { "label": "By Project", "value": "Give me all projects where I used Azure" },
+        { "label": "By Year", "value": "Work done with Azure for each project in years" },
+        { "label": "Highlights", "value": "Contribution highlights specific to Azure" }
+      ],
+    },
+    {
+      "label": ".NET Work",
+      "options": [
+        { "label": "WPF", "value": "Please list WPF work done for clients" },
+        { "label": "Option B", "value": "optionB" },
+        { "label": "Option C", "value": "optionC" }
+      ],
+    },
+    {
+      "label": "Architecture",
+      "options": [
+        { "label": "System", "value": "Please give me a summary of System Architecture Work" },
+        { "label": "Option B", "value": "optionB" },
+        { "label": "Option C", "value": "optionC" }
+      ],
+    },
+    {
+      "label": "ERP",
+      "options": [
+        { "label": "ERP Systems", "value": "Please give me a list of clients I did ERP work for" },
+        { "label": "Option B", "value": "optionB" },
+        { "label": "Option C", "value": "optionC" }
+      ],
+    },
+  ];
 
-export const O365UIData: TechDetailsDataRow[] = 
-[
-    { 
-        "label": "O365", 
-        "options": [
-            { "label": "By Project", "value": "Give me all projects where I used Azure" },
-            { "label": "By Year", "value": "Work done with Azure for each project in years" },
-            { "label": "Highlights", "value": "Contribution highlights specific to Azure" }
-      ], 
-    }
-];
+export const ArchitectureUIData: TechDetailsDataRow[] =
+  [
+    {
+      "label": "Azure Work",
+      "options": [
+        { "label": "By Project", "value": "Give me all projects where I used Azure" },
+        { "label": "By Year", "value": "Work done with Azure for each project in years" },
+        { "label": "Highlights", "value": "Contribution highlights specific to Azure" }
+      ],
+    },
+    {
+      "label": ".NET Work",
+      "options": [
+        { "label": "WPF", "value": "Please list WPF work done for clients" },
+        { "label": "Option B", "value": "optionB" },
+        { "label": "Option C", "value": "optionC" }
+      ],
+    },
+    {
+      "label": "Architecture",
+      "options": [
+        { "label": "System", "value": "Please give me a summary of System Architecture Work" },
+        { "label": "Option B", "value": "optionB" },
+        { "label": "Option C", "value": "optionC" }
+      ],
+    },
+    {
+      "label": "ERP",
+      "options": [
+        { "label": "ERP Systems", "value": "Please give me a list of clients I did ERP work for" },
+        { "label": "Option B", "value": "optionB" },
+        { "label": "Option C", "value": "optionC" }
+      ],
+    },
+  ];
 
-export const DevOpsUIData: TechDetailsDataRow[] = 
-[
-    { 
-        "label": "O365", 
-        "options": [
-            { "label": "By Project", "value": "Give me all projects where I used Azure" },
-            { "label": "By Year", "value": "Work done with Azure for each project in years" },
-            { "label": "Highlights", "value": "Contribution highlights specific to Azure" }
-      ], 
-    }
-];
+export const ERPUIData: TechDetailsDataRow[] =
+  [
+    {
+      "label": "Azure Work",
+      "options": [
+        { "label": "By Project", "value": "Give me all projects where I used Azure" },
+        { "label": "By Year", "value": "Work done with Azure for each project in years" },
+        { "label": "Highlights", "value": "Contribution highlights specific to Azure" }
+      ],
+    },
+    {
+      "label": ".NET Work",
+      "options": [
+        { "label": "WPF", "value": "Please list WPF work done for clients" },
+        { "label": "Option B", "value": "optionB" },
+        { "label": "Option C", "value": "optionC" }
+      ],
+    },
+    {
+      "label": "Architecture",
+      "options": [
+        { "label": "System", "value": "Please give me a summary of System Architecture Work" },
+        { "label": "Option B", "value": "optionB" },
+        { "label": "Option C", "value": "optionC" }
+      ],
+    },
+    {
+      "label": "ERP",
+      "options": [
+        { "label": "ERP Systems", "value": "Please give me a list of clients I did ERP work for" },
+        { "label": "Option B", "value": "optionB" },
+        { "label": "Option C", "value": "optionC" }
+      ],
+    },
+  ];
 
-export const StorageUIData: TechDetailsDataRow[] = 
-[
-    { 
-        "label": "Storage", 
-        "options": [
-            { "label": "By Project", "value": "Give me all projects where I used Azure" },
-            { "label": "By Year", "value": "Work done with Azure for each project in years" },
-            { "label": "Highlights", "value": "Contribution highlights specific to Azure" }
-      ], 
+export const AIMLUIData: TechDetailsDataRow[] =
+  [
+    {
+      "label": "AI/ML",
+      "options": [
+        { "label": "By Project", "value": "Give me all projects where I used Azure" },
+        { "label": "By Year", "value": "Work done with Azure for each project in years" },
+        { "label": "Highlights", "value": "Contribution highlights specific to Azure" }
+      ],
     }
-];
+  ];
 
-export const ProtocolsUIData: TechDetailsDataRow[] = 
-[
-    { 
-        "label": "Protocols", 
-        "options": [
-            { "label": "By Project", "value": "Give me all projects where I used Azure" },
-            { "label": "By Year", "value": "Work done with Azure for each project in years" },
-            { "label": "Highlights", "value": "Contribution highlights specific to Azure" }
-      ], 
-    }
-];
+export const LanguagesUIData: TechDetailsDataRow[] =
+  [
+    {
+      "label": "C#",
+      "options": [
+        { "label": "By Project", "value": "List of all projects where I used C#" },
+        { "label": "By Year", "value": "Work done with C# by project in years in reverse chronogical order" },
+        { "label": "Highlights", "value": "Contribution highlights specific to C#" }
+      ],
+    },
+    {
+      "label": "Typescript",
+      "options": [
+        { "label": "By Project", "value": "Give me all projects where I used #token#" },
+        { "label": "By Year", "value": "Work done with #token# for each project in years" },
+        { "label": "Highlights", "value": "Contribution highlights specific to #token#" }
+      ],
+    },
+    {
+      "label": "JavaScript",
+      "options": [
+        { "label": "By Project", "value": "Give me all projects where I used #token#" },
+        { "label": "By Year", "value": "Work done with #token# for each project in years" },
+        { "label": "Highlights", "value": "Contribution highlights specific to #token#" }
+      ],
+    },
+    {
+      "label": "HTML",
+      "options": [
+        { "label": "By Project", "value": "Give me all projects where I used #token#" },
+        { "label": "By Year", "value": "Work done with #token# for each project in years" },
+        { "label": "Highlights", "value": "Contribution highlights specific to #token#" }
+      ],
+    },
+    {
+      "label": "PowerShell",
+      "options": [
+        { "label": "By Project", "value": "Give me all projects where I used #token#" },
+        { "label": "By Year", "value": "Work done with #token# for each project in years" },
+        { "label": "Highlights", "value": "Contribution highlights specific to #token#" }
+      ],
+    },
+    {
+      "label": "Bash",
+      "options": [
+        { "label": "By Project", "value": "Give me all projects where I used #token#" },
+        { "label": "By Year", "value": "Work done with #token# for each project in years" },
+        { "label": "Highlights", "value": "Contribution highlights specific to #token#" }
+      ],
+    },
+    {
+      "label": "Java",
+      "options": [
+        { "label": "By Project", "value": "Give me all projects where I used #token#" },
+        { "label": "By Year", "value": "Work done with #token# for each project in years" },
+        { "label": "Highlights", "value": "Contribution highlights specific to #token#" }
+      ],
+    },
+    {
+      "label": "Python",
+      "options": [
+        { "label": "By Project", "value": "Give me all projects where I used #token#" },
+        { "label": "By Year", "value": "Work done with #token# for each project in years" },
+        { "label": "Highlights", "value": "Contribution highlights specific to #token#" }
+      ],
+    },
+    {
+      "label": "SQL",
+      "options": [
+        { "label": "By Project", "value": "Give me all projects where I used #token#" },
+        { "label": "By Year", "value": "Work done with #token# for each project in years" },
+        { "label": "Highlights", "value": "Contribution highlights specific to #token#" }
+      ],
+    },
+    {
+      "label": "VB.NET",
+      "options": [
+        { "label": "By Project", "value": "Give me all projects where I used #token#" },
+        { "label": "By Year", "value": "Work done with #token# for each project in years" },
+        { "label": "Highlights", "value": "Contribution highlights specific to #token#" }
+      ],
+    },
+    {
+      "label": "Razor",
+      "options": [
+        { "label": "By Project", "value": "Give me all projects where I used #token#" },
+        { "label": "By Year", "value": "Work done with #token# for each project in years" },
+        { "label": "Highlights", "value": "Contribution highlights specific to #token#" }
+      ],
+    },
+    {
+      "label": "JSON",
+      "options": [
+        { "label": "By Project", "value": "Give me all projects where I used #token#" },
+        { "label": "By Year", "value": "Work done with #token# for each project in years" },
+        { "label": "Highlights", "value": "Contribution highlights specific to #token#" }
+      ],
+    },
+    {
+      "label": "Xml",
+      "options": [
+        { "label": "By Project", "value": "Give me all projects where I used #token#" },
+        { "label": "By Year", "value": "Work done with #token# for each project in years" },
+        { "label": "Highlights", "value": "Contribution highlights specific to #token#" }
+      ],
+    },
+    {
+      "label": "YAML",
+      "options": [
+        { "label": "By Project", "value": "Give me all projects where I used #token#" },
+        { "label": "By Year", "value": "Work done with #token# for each project in years" },
+        { "label": "Highlights", "value": "Contribution highlights specific to #token#" }
+      ],
+    },
+    {
+      "label": "Assembly",
+      "options": [
+        { "label": "By Project", "value": "Give me all projects where I used #token#" },
+        { "label": "By Year", "value": "Work done with #token# for each project in years" },
+        { "label": "Highlights", "value": "Contribution highlights specific to #token#" }
+      ],
+    },
+    {
+      "label": "IL/MSIL",
+      "options": [
+        { "label": "By Project", "value": "Give me all projects where I used #token#" },
+        { "label": "By Year", "value": "Work done with #token# for each project in years" },
+        { "label": "Highlights", "value": "Contribution highlights specific to #token#" }
+      ],
+    },
+  ];
 
-export const IDEsUIData: TechDetailsDataRow[] = 
-[
-    { 
-        "label": "IDE''s & More", 
-        "options": [
-            { "label": "By Project", "value": "Give me all projects where I used Azure" },
-            { "label": "By Year", "value": "Work done with Azure for each project in years" },
-            { "label": "Highlights", "value": "Contribution highlights specific to Azure" }
-      ], 
+export const SDKSUIData: TechDetailsDataRow[] =
+  [
+    {
+      "label": "Libraries & SDK's",
+      "options": [
+        { "label": "By Project", "value": "Give me all projects where I used Azure" },
+        { "label": "By Year", "value": "Work done with Azure for each project in years" },
+        { "label": "Highlights", "value": "Contribution highlights specific to Azure" }
+      ],
     }
-];
+  ];
 
-export const OSUIData: TechDetailsDataRow[] = 
-[
-    { 
-        "label": "OS", 
-        "options": [
-            { "label": "By Project", "value": "Give me all projects where I used Azure" },
-            { "label": "By Year", "value": "Work done with Azure for each project in years" },
-            { "label": "Highlights", "value": "Contribution highlights specific to Azure" }
-      ], 
+export const O365UIData: TechDetailsDataRow[] =
+  [
+    {
+      "label": "O365",
+      "options": [
+        { "label": "By Project", "value": "Give me all projects where I used Azure" },
+        { "label": "By Year", "value": "Work done with Azure for each project in years" },
+        { "label": "Highlights", "value": "Contribution highlights specific to Azure" }
+      ],
     }
-];
+  ];
+
+export const DevOpsUIData: TechDetailsDataRow[] =
+  [
+    {
+      "label": "O365",
+      "options": [
+        { "label": "By Project", "value": "Give me all projects where I used Azure" },
+        { "label": "By Year", "value": "Work done with Azure for each project in years" },
+        { "label": "Highlights", "value": "Contribution highlights specific to Azure" }
+      ],
+    }
+  ];
+
+export const StorageUIData: TechDetailsDataRow[] =
+  [
+    {
+      "label": "Storage",
+      "options": [
+        { "label": "By Project", "value": "Give me all projects where I used Azure" },
+        { "label": "By Year", "value": "Work done with Azure for each project in years" },
+        { "label": "Highlights", "value": "Contribution highlights specific to Azure" }
+      ],
+    }
+  ];
+
+export const ProtocolsUIData: TechDetailsDataRow[] =
+  [
+    {
+      "label": "Protocols",
+      "options": [
+        { "label": "By Project", "value": "Give me all projects where I used Azure" },
+        { "label": "By Year", "value": "Work done with Azure for each project in years" },
+        { "label": "Highlights", "value": "Contribution highlights specific to Azure" }
+      ],
+    }
+  ];
+
+export const IDEsUIData: TechDetailsDataRow[] =
+  [
+    {
+      "label": "IDE''s & More",
+      "options": [
+        { "label": "By Project", "value": "Give me all projects where I used Azure" },
+        { "label": "By Year", "value": "Work done with Azure for each project in years" },
+        { "label": "Highlights", "value": "Contribution highlights specific to Azure" }
+      ],
+    }
+  ];
+
+export const OSUIData: TechDetailsDataRow[] =
+  [
+    {
+      "label": "OS",
+      "options": [
+        { "label": "By Project", "value": "Give me all projects where I used Azure" },
+        { "label": "By Year", "value": "Work done with Azure for each project in years" },
+        { "label": "Highlights", "value": "Contribution highlights specific to Azure" }
+      ],
+    }
+  ];
 
 export type TechData = {
   label: string;
@@ -277,7 +389,7 @@ export type TechData = {
 
 export const UIData: TechData[] = [
   { label: 'AI/ML', details: AIMLUIData },
-  { label: 'Azure', details: AzureUIData  },
+  { label: 'Azure', details: AzureUIData },
   { label: '.NET', details: NetUIData },
   { label: 'Architecture', details: ArchitectureUIData },
   { label: 'Languages', details: LanguagesUIData },
@@ -288,10 +400,12 @@ export const UIData: TechData[] = [
   { label: 'Protocols', details: ProtocolsUIData },
   { label: 'IDE``s', details: IDEsUIData },
   { label: 'OS', details: OSUIData }
-  
+
 ];
 
-export const  resumeText = `DrFit Cloud Architecture 🔎
+export const resumeText = `
+Project DrDev (Technical Solution Architect/Team Lead)                                                              Jan 2019 –  Oct 2023, Houston
+DrFit Cloud Architecture 🔎
 Domain Driven Design & Architecture – Patterns 🔎
 Azure cloud hosted DDD & pattern-based architecture is highly scalable for the potentially large numbers of users around the world. Core domain sub domains identified, distilled further into bounded contexts which are then mapped to implementation patterns. Generic & Supporting domains are also identified and mapped to already implemented patterns. Besides the largely Tactical DDD, important elements of Strategic-DDD like CI/CD and upstream-downstream Context Mapping were identified. 
 Infrastructure – Shared IaC 
@@ -333,7 +447,10 @@ DR/HA
 	Cosmos DB – Accomplished by leveraging the OOTB multiple region replication support by associating multiple regions with the global Cosmos DB resource and connecting with multi-master mode enabled
 	Web Apps in App Services – Azure Front Door is ideal for HTTP level routing with global failover. There have been some discussions about load balancing Azure API Management via AFD but no final plan yet
 
+C#, AAD, Keyvault, Monitoring+Insights, Automation, AAD B2C, Xamarin Forms, Azure SQL, Microservices, ARM, DevOps+Terraform+Helm, Azure, Redis Cache, Mongo DB, RabbitMQ
+SDKs & Tooling –MS Graph, MS Identity, Redis, Keyvault, Polly, NewtonSoft, EntityFramework, ASP.Net Core, FluentValidations, FluentAssertions, AutoFac, SeriLog, MS Owin, MS Open API, ELK Stack, Google/MS Grpc, MongoDB, VS Code, VS 2022, PowerShell, Node,js, MVVMCross, Skia Sharpnado
 
+Project Halliburton (Technical Solution Architect/Team Lead)                                                              Aug 2022 –  Mar 2024, Houston
 Built applications for Monitoring & Managing Deep Sea Wells from Oil Rigs 
 -	Mobile Application (currently working on)
 o	Working on a POC where an Android Studio Iguana built application that connects via Bluetooth to an intelligent Arduino based Camera to pick images and video which is then sent to the ChatGPT GPT-Pro vision API for analysis 
@@ -379,6 +496,8 @@ o	Hosting deployment docs
 o	SQL Servers Always On provisioning docs
 o	Parallel Architecture Documentation 
 
+C#, Monitoring+Insights, Automation, SQL, Microservices, DevOps, Azure, RabbitMQ, Polly, NewtonSoft, EntityFramework, ASP.Net Core, FluentValidations, FluentAssertions,SeriLog, MS Open API, ELK Stack, VS Code, VS 2022, PowerShell, Node.js
+
 Contribution Highlights
 Incorporate MS Orleans with custom framework & dashboards
 1-click PowerShell for SQL Server AlwaysOn deploys
@@ -395,7 +514,7 @@ Extended EF migrations framework for User Story aligned seamless schema/data cha
 Prometheus, Grafana & AlertManager implementation in progress for consistent cross app diagnostics, monitoring and trending graphs
 Global Team Mentoring
 
-Port of Long Beach (O365/Azure/SharePoint - Architect, Admin, Lead)                                                  May 2020 – Jul 2022, Long Beach
+Project Port of Long Beach (O365/Azure/SharePoint - Architect, Admin, Lead)                                                  May 2020 – Jul 2022, Long Beach
 Worked 2nd time around with POLB 
 The migration of about a dozen SP applications to O365 involved a full analysis of the migration effort, sort of an MVP approach, and out of this analysis a detailed 3 level project plan was created and executed!
 
@@ -432,7 +551,7 @@ Migrate Integration with Dynamics CRM and AX
 On-Prem classic Webparts to SP Online SPFx conversion 
 Convince POLB to convert from ADF to SSRS
 
-Avoca Group (OnPrem to Azure/O365 Migration Architect/Lead)                                                                        Jul 2019 – Apr 2020, New Jersey
+Project Avoca Group (OnPrem to Azure/O365 Migration Architect/Lead)                                                                        Jul 2019 – Apr 2020, New Jersey
 Office365 - Knowledge Center Portal                 
 o	Re-architected and developed the company’s core revenue generator SP2013 Knowledge Portal as a modern SP Online SPFx React driven portal around a hub-based topology around OOTB Fabric core & fabric react components, PnPJS fluent API, page layouts, modern Lists/Libs, an MMS Taxonomy all brought together in a collection of communication sites 
 o	Aggregated content surfaced via custom react-redux SPFx extensions & webparts using Dynamic Data Connections
@@ -470,7 +589,7 @@ RPA leveraged for Ning integration
 Excel & SharePoint knowledgebase moved to Azure Cognitive Services
 Rapid workaround to Ning adoption for show stopper conversion to Yammer from GetSat
 
-Ingram Micro (Senior Developer)                                                                                       Jan 2019 – Jun 2019, Irvine
+Project Ingram Micro (Senior Developer)                                                                                       Jan 2019 – Jun 2019, Irvine
 Worked on supplementing IM360, the internal MS Dynamics 365 system built around Microsoft Power Platform to automate sales quotes/processes and 360° customer managements particularly the integration with Cisco’s CCW system
 -	Power Apps Components
 o	Resolve issues with the Grid component
@@ -478,7 +597,7 @@ o	Implement cXml over WebApi based integration of Quotes with Cisco’s order ma
 o	Punchout to Cisco’s CCW system including the Authentication integrated into IM360 via OCI Version 3.0
 o	After order completion on Cisco’s system the shopping cart is transferred back to IM360 via an OCI message sent via the hookurl provided during the initial punchout connection phase
 
-Insight/Microsoft (Azure & Mobile Senior Architect/Developer)                                                                                  Aug 2017 – Sep 2018, Phoenix 
+Project Insight/Microsoft (Azure & Mobile Senior Architect/Developer)                                                                                  Aug 2017 – Sep 2018, Phoenix 
 -	Azure ML
 o	Specialty Foods - Working on an engagement building and training ML models leveraging 15 years of SQL Server data for intelligent online upselling and cross selling both for customer warm and cold starts. Provisioning the relevant Azure DevOps and CI/CD plumbing as well. Minor enhancements to the existing ASP.Net-jQuery B2C portal to surface the data science upsell results was a part of this engagement 
 o	POC for Los Angeles City + USC i3 Consortium - Live IoT feed of data from LAX parking lots used to show real time parking availability, predicted parking availability based on a simple ML Model and alternate private parking nearby
@@ -499,7 +618,7 @@ Help in a 1000+ participant American Airlines Hackathon
 Gain ML experience with 2 client projects
 Gain experience with a very large Logic Apps client engagement
 
-US Federal Reserve  (Architect, Team Lead)                 Jan 2017 – Jul 2017, San Francisco, CA
+Project US Federal Reserve  (Architect, Team Lead)                 Jan 2017 – Jul 2017, San Francisco, CA
 	Mobile First & Managed Azure - Part of the team to set this practice up for the 12th district to carry out the Cloud & Mobile First strategy within the tight security guidelines of the federal banking system for Mac/Windows hard and soft tooling selection and approval, AirWatch and VS App Center adoption, Managed Microsoft Azure & Enterprise Mobility Governance/Cost/Services
 	Conference App Suite - App Styling and content in On-Prem SP2013 with data in On-Prem SQL Server. Backend NET Windows Service to send out registration, reminder emails and calendar invites. Angular Admin Application for Content Management. ASP.NET Core hand held bar code scanner application for badging in. First integration effort with the Fed Mulesoft API gateway.
 	Fed Ambassador App - Datastore is an SP Online Portal and leverages the Azure Key vault and Azure Storage. Auth is all OAuth and Azure Push Notification Service is used to send out user notifications
@@ -507,7 +626,7 @@ US Federal Reserve  (Architect, Team Lead)                 Jan 2017 – Jul 2017
 Xamarin Forms, ASP.NET Core, MuleSoft, SP 2013, SQL Server, Windows Services, Azure App Service, Azure Keyvault, Azure Storage, Azure Functions, Azure Notifications, Angular 2, OCR, OAuth
 SDKs & Tooling – AirWatch and VS App Center, VS 2013/2015, MVVMCross
 
-Willdan Group  (Architect, Team Lead)           Aug 2016 – Dec  2016,  Anaheim CA
+Project Willdan Group  (Architect, Team Lead)           Aug 2016 – Dec  2016,  Anaheim CA
 Willdan provides consulting and implementation services across energy, infrastructure and transportation, municipal engineering, planning, and staff augmentation; economic and financial analysis, and homeland security and emergency management
 	BSA - Working directly for the Director of IT draw up a final report for executive management which included a list of all the different software applications big and small and the associated technologies running across all divisions of Willdan Group in the various offices around the US. Also captured end user pain points, application TCO including support level, source code availability and other many parameters like mission criticality of applications 
 	Architect: Assist IT in technology & vendor selection for inhouse replacement applications, planning and sizing Office 365 resources and federated Azure AD with Okta SSO, Site Topology security matrix along with the O365 Governance strategy
@@ -520,7 +639,7 @@ Willdan provides consulting and implementation services across energy, infrastru
 -	Excel Forms application upgrade to support integration with Fishbowl warehouse management system
 Office 365 Cloud, Azure, Salesforce, SharePoint 2010, ASP.NET MVC, WCF, Angular 1, jQuery, OneDrive/Google Drive/Drobox API’s, MS Excel Forms
 
-Port of Long Beach (DevOps - Architect, Admin & Lead)                                                      Jan 2016 – Jul 2016, Long Beach, CA
+Project Port of Long Beach (DevOps - Architect, Admin & Lead)                                                      Jan 2016 – Jul 2016, Long Beach, CA
 -	SP2010 / SP2013 Governance
 o	Help IT with SharePoint day to day admin work, patches and updates, farm provisioning, planning and execution of SQL Server 2005-2008 upgrade to SQL Server 2012-2014,
 o	NET & SharePoint application Prod rollout planning, approvals and the actual deployments!
@@ -555,7 +674,7 @@ Nintex WF to SP2013  WF migrations
 Built a 100+ API’s interface around Office OpenXml
 Extended Visual Studio with Tooling for Office Document based code generation
 
-ACOM.Com (Large Azure Migration & Xamarin Architect)                                                                   Feb 2014 – Dec 2015, Long Beach
+Project ACOM.Com (Large Azure Migration & Xamarin Architect)                                                                   Feb 2014 – Dec 2015, Long Beach
 ACOM provides solutions in the End-to-end AP automation to process all your B2B payments space
 -	Xamarin Forms/Event Grid/Push Notification Service/Azure Functions
 o	Phase 1 of ACOM Control & Monitoring App involved pushing mission critical alerts and metrics down to a mobile platform over the Azure Push Notification Service (PNS)
@@ -629,7 +748,7 @@ Purchase and integrate 3rd party .Net based OCR engine for check scanning
 Reports built around Synapse analytics & Power BI for hundreds of client SQL Server databases
 Guide Offshore/OnShore team
 
-QTC/Lockheed/Leidos (SharePoint, Solution Architect, Senior Developer)                             Apr 2013 – Jan 2014, Diamond Bar CA
+Project QTC/Lockheed/Leidos (SharePoint, Solution Architect, Senior Developer)                             Apr 2013 – Jan 2014, Diamond Bar CA
 Healthcare software for VA Authority, VA Providers and VA Examinees.
 -	SP2010/Angular Apps/Workflows
 o	Migrate 2000+ VA Provider doctor SP2010 portal to a responsive Portal built on the ASP.NET MVC stack. Co-navigation across the external and internal Citrix hosted medical record viewers implemented using Microsoft SignalR
@@ -672,7 +791,7 @@ SP2010 to MS CRM integration for licensing cost savings
 Cumbersome PDF viewer Citrix SSO based receiver app replaced with Xamarin mobile App
 Mentor Onshore/Offshore teams
 
-IncWorx (SharePoint Chief Architect, Developer, Admin)                                                                  Mar 2010 – Mar 2013, Chicago
+Project IncWorx (SharePoint Chief Architect, Developer, Admin)                                                                  Mar 2010 – Mar 2013, Chicago
 My Responsibilities: Pre-Sales Support: Craft the technical sections of responses to RFP’s and participate in pre-sales presentation’s,
 Architect: Handle scope meetings and SP20XX technology stack element selection and sign off, couple of non SP20XX engagements except as mentioned below, assist PMO with project plan around waterfall SDLC, assist clients with hardware sizing for farm provisioning, 
 Developer: Manage Dev teams both in Chicago and off shore including code reviews, involved in all aspects of SharePoint Portal including development of WebParts/Workflows/Timers/App Store/Search/InfoPath/Nintex, Silverlight Apps, SQL Server SPROCs, PPS BI Dashboards & SSRS Reports, Deployments: SharePoint application rollout planning, approvals and the actual deployments! Admin: About 60% of the clients needed SP20XX Admin support as a part of SLAs with IncWorx
@@ -712,7 +831,7 @@ Client List
 -	City of Safford
 -	Server Farm Provisioning; Governance Planning and SharePoint IT Administration; Claims with ADFS, Kerberos, FBA, Multi AD; Site Templates, Page Layouts; Master Pages, MMS Navigation; Responsive Design – html5,JQuery; Search Display Templates; MySites/profile, Social Media, Yammer; Custom/Extended Web Parts; Client-SP Object LINQ, .NET, JS Silverlight; InfoPath Forms and Code Behind; Custom WorkFlows/Forms; SharePoint Content Catalog; Migration from SP2007, SP2010; BDC Line of Business Integration; SSRS, Performance Point Dashboard; Custom Timer Jobs, Event Handlers; Deployment Scripts, Code; Documentation and Training; Development Team TOK, LOB Integration, SP2013App Store
  
-Feb 09-Feb 10                      Edwards Life Sciences / EV1000 Critical Care Monitor (Senior Developer)
+Project Edwards Life Sciences / EV1000 Critical Care Monitor (Senior Developer)                                    Feb 09-Feb 10
 The EV1000 monitoring system is a monitoring platform that displays intermittent and continuous hemodynamic measurements related to blood flow, fluid status, and organ function for use on critically ill patients anywhere critical care is provided in an acute care setting, most often in an ICU or hospital environment.
  NET 3.5/ WPF UI application on real time embedded windows XP talking to embedded Linux with major emphasis on  UI performance along with data communications and data storage optimization
 NET 3.5/ WPF, Embedded Windows XP
@@ -726,7 +845,7 @@ executive management measured by sales leaders, practice directors, practice etc
 BI PPS, SSRS/SSAS, Excel Services,  PowerPivot
                                                       Net 3.0 + C#, WCF+REST, WPF, WF, ASP.NET with MVC, AJAX, jQuery and many PlugIns, Flex with AS3, JDK 1.4+, SOA Silos, TFS 2005/2008, Rackable hardware sizing, Interwoven CMS, MOSS CMS, Biztalk 2006, WSS/MOSS 07, SQL Server 200X, Oracle 9i
 
-Jun 06-Jun 07                        Western Digital, Lake Forest, CA – Multiple Projects   (Architect/Developer)
+Project Western Digital, Lake Forest, CA – Multiple Projects   (Architect/Developer)                            Jun 06-Jun 07                        
 WDC.Com Net 2.0 Move from Classic ASP Moved WDC to .NET 2.0 from classic ASP, to position them to leverage all that NET 2.0 technologies have to offer. Localization (9 languages), themes, custom security providers, custom sitemap providers, custom web controls and extensions to Microsoft web controls, composite controls
 Google Mini Integration Integrated the Google search engine running on a Linux appliance into the WDC site. 
 Net Framework 2.0, Atlas AJAX Framework, SQL Server 2005, JavaScript/DHTML, XML 2.0/XSLT 1.0, ASP.NET 2.0, .Net Web Services, ADO.Net 2.0, C# 2.0, Google Appliance
@@ -739,7 +858,7 @@ Advanced Listing Web Part replaces the existing SPS 2003 Listing Web Part which 
 both WSS site groups and SPS audiences for security management
 SharePoint 2003. NET 2.0
 
-Feb 01-Mar 04                      Deloitte & Touché, Woodland Hills, CA and New York, NY – Multiple Projects   (Senior Developer)
+Deloitte & Touché, Woodland Hills, CA and New York, NY – Multiple Projects   (Senior Developer)                   Feb 01-Mar 04
 Task Scheduler, multithreaded, dynamically load balanced NT service hosted scheduler developed using the .NET framework with real time web based UI for management of job scheduling, aborting and reporting with a rich choice of filters like job status monitoring. 
 Pool Selection, credit/loan securitization web application port of a client server C++/MFC application for Royal Bank of Canada, Wells Fargo, FleetOne, and GE Capital. Featured, end to end XML transport with published XML schemas for data management, Oracle and SQL Server support.
 Net Framework 1.1, Infragistics, SQL Server 2000, SQLXML, RegEx, Commerce Server 2002, VBScript/JavaScript/DHTML, XML/XSLT, .Net Web Services, .Net Enterprise Services, ASP.Net, ADO.Net, .Net Windows Forms, Visual Studio Tools For Office, PDF Library, JavaScript/DHTML, XML/XSLT, C#, MSI SDK, Visual Studio Automation
@@ -747,10 +866,8 @@ LightYear Framework - Large (thousands) set of JavaScript behaviors (HTC) like S
  LightYear OraclePort - Developed a hybrid language with support for both PL/SQL and T-SQL constructs to facilitate a common codebase for SPs for SQL Server Stored and Oracle.
 Rational Suite, Behaviors(HTC), XML DOM, DHTML DOM, JavaScript, IIS 5.x, OPTools.h++ Java, C++, PL/SQL, Java Stored Procs, SQLJ, ADO, Query Analyzer, OleDB., ASP
 
-Jan 00- Jan 01                        Universal Studios, Universal City, CA           (Developer)
+Universal Studios, Universal City, CA (Developer)                                                 Jan 00- Jan 01
 ELabs - Intranet to track companies, contacts, ongoing projects, potential e-initiatives with technology companies. Central control point for document management and categorization, n, press releases or scheduled events. Site wide search, link export, cookie based user preferences and Status reports provided data about ongoing/planned projects. 
 ASP, XML DOM, DHTML DOM, VBScript, JavaScript, VB, IIS 4.01+, SQL Server
-
-
 `;
 

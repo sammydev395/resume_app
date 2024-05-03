@@ -35,7 +35,7 @@ const ResultsField = ({ results, question }: { results: string, question: string
         variant="outlined"
         multiline
         fullWidth
-        rows={40}
+        rows={70}
         value={results}
         InputProps={{
           readOnly: true,

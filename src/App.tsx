@@ -16,9 +16,9 @@ import { SpeedInsights } from "@vercel/speed-insights/react"
 const AHeader = styled('div')({
   backgroundColor: '#2196f3',
   color: 'white',
-  padding: '20px 0',
+  padding: '5px 0',
   textAlign: 'center',
-  fontSize: '24px',
+  fontSize: '22px',
 });
 
 const RadioGroupContainer = styled('div')({
@@ -44,7 +44,7 @@ padding: 5px;
 `;
 
 const RightPanel = styled('div')`
-flex: 1;
+flex: 0.3;
 padding: 5px;
 `;
 
@@ -78,11 +78,11 @@ const App: React.FC = () => {
                     selectedValue={selectedOption} 
                     onChange={setSelectedOption} />
       </RadioGroupContainer>
-      <Grid container spacing={2}>
-        <Grid item xs={12} md={6}>          
+      <Grid container spacing={1}>
+        <Grid item xs={12} md={5}>          
           <DataTable data={data} selectedOption={selectedOption} handleSubmit={handleSubmit} />
         </Grid>
-        <Grid item xs={12} md={6}>
+        <Grid item xs={16} md={6}>
           <ResultsField results={response} question={question} />
         </Grid>
       </Grid>
