@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { styled } from '@mui/system';
 import { Paper, Container, Grid } from '@mui/material';
 import './App.css';
@@ -8,8 +8,9 @@ import DataTable from './Components/DataTable';
 import ResultsField from './Components/ResultsField';
 import { UIData as data, resumeText } from './Data/data';
 import FileLoader from './Components/FileLoader';
-import OpenAIService from './Service/OpenAIService'
+import getOpenAIResponse from './Service/OpenAIService'
 import RadioField from './Components/RadioField';
+import Chatbot from './Components/Chat';
 import { SpeedInsights } from "@vercel/speed-insights/react"
 
 // Styled components using @mui/system
@@ -53,6 +54,7 @@ const App: React.FC = () => {
   const [selectedOption, setSelectedOption] = useState(data[0].label);
   const [question, setQuestion] = useState<string>('');
   const [response, setResponse] = useState<string>('');
+  const openAIServceRef = useRef<HTMLDivElement>(null);
 
   const handleFileLoaded = (contents: string) => {
     setFileContents(contents);
@@ -61,6 +63,9 @@ const App: React.FC = () => {
   const handleSubmit = (selectedOption: string) => {
     console.log('Submitted value:', selectedOption);
     setQuestion(selectedOption);
+    getOpenAIResponse(resumeText, selectedOption, setResponse).then((response) => {
+      setResponse(response.content);
+    });
   };
 
   return (
@@ -86,7 +91,6 @@ const App: React.FC = () => {
           <ResultsField results={response} question={question} />
         </Grid>
       </Grid>
-      <OpenAIService fileContents={resumeText} question={question} setResponse={setResponse}></OpenAIService>
       <SpeedInsights/>
     </Container>
   );
