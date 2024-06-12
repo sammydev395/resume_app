@@ -49,7 +49,7 @@ export const getOpenAIResponse = async (fileContents: string, question: string, 
 
     try {
       const chatCompletion = await openai.chat.completions.create({
-        model: 'gpt-3.5-turbo',
+        model: 'gpt-4o',
         messages: [{ "role": "system", "content": fileContents }, { "role": "user", "content": question }],
         max_tokens: 2000,  // Max amount of tokens the AI will respond with
         top_p: 1,

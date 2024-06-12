@@ -13,6 +13,38 @@ export interface TechDetailsDataRow {
 export const AzureUIData: TechDetailsDataRow[] =
   [
     {
+      "label": "Azure Keyvault",
+      "options": [
+        { "label": "By Project", "value": "Give me all projects where I used Azure Keyvault" },
+        { "label": "By Year", "value": "Work done with Azure Keyvault for each project in years" },
+        { "label": "Highlights", "value": "Contribution highlights specific to Azure Keyvault" }
+      ],
+    },
+    {
+      "label": "Azure CLI",
+      "options": [
+        { "label": "By Project", "value": "Give me all projects where I used Azure CLI" },
+        { "label": "By Year", "value": "Work done with Azure CLI for each project in years" },
+        { "label": "Highlights", "value": "Contribution highlights specific to Azure CLI" }
+      ],
+    },
+    {
+      "label": "Terraform",
+      "options": [
+        { "label": "By Project", "value": "Give me all projects where I used Terraform" },
+        { "label": "By Year", "value": "Work done with Terraform for each project in years" },
+        { "label": "Highlights", "value": "Contribution highlights specific to Terraform" }
+      ],
+    },
+    {
+      "label": "CI/CD",
+      "options": [
+        { "label": "By Project", "value": "Give me all projects where I used CI/CD" },
+        { "label": "By Year", "value": "Work done with CI/CD for each project in years" },
+        { "label": "Highlights", "value": "Contribution highlights specific to CI/CD" }
+      ],
+    },
+    {
       "label": "Azure Functions",
       "options": [
         { "label": "By Project", "value": "Give me all projects where I used Azure" },
@@ -121,37 +153,13 @@ export const ArchitectureUIData: TechDetailsDataRow[] =
 export const ERPUIData: TechDetailsDataRow[] =
   [
     {
-      "label": "Azure Work",
-      "options": [
-        { "label": "By Project", "value": "Give me all projects where I used Azure" },
-        { "label": "By Year", "value": "Work done with Azure for each project in years" },
-        { "label": "Highlights", "value": "Contribution highlights specific to Azure" }
-      ],
-    },
-    {
-      "label": ".NET Work",
-      "options": [
-        { "label": "WPF", "value": "Please list WPF work done for clients" },
-        { "label": "Option B", "value": "optionB" },
-        { "label": "Option C", "value": "optionC" }
-      ],
-    },
-    {
-      "label": "Architecture",
-      "options": [
-        { "label": "System", "value": "Please give me a summary of System Architecture Work" },
-        { "label": "Option B", "value": "optionB" },
-        { "label": "Option C", "value": "optionC" }
-      ],
-    },
-    {
       "label": "ERP",
       "options": [
-        { "label": "ERP Systems", "value": "Please give me a list of clients I did ERP work for" },
-        { "label": "Option B", "value": "optionB" },
-        { "label": "Option C", "value": "optionC" }
+        { "label": "By Project", "value": "Give me all projects where I used ERP" },
+        { "label": "By Year", "value": "Work done with ERP for each project in years" },
+        { "label": "Highlights", "value": "Contribution highlights specific to ERP" }
       ],
-    },
+    }
   ];
 
 export const AIMLUIData: TechDetailsDataRow[] =
@@ -159,228 +167,230 @@ export const AIMLUIData: TechDetailsDataRow[] =
     {
       "label": "AI/ML",
       "options": [
-        { "label": "By Project", "value": "Give me all projects where I used Azure" },
-        { "label": "By Year", "value": "Work done with Azure for each project in years" },
-        { "label": "Highlights", "value": "Contribution highlights specific to Azure" }
+        { "label": "By Project", "value": "Give me all projects where I used AI/ML" },
+        { "label": "By Year", "value": "Work done with AI/ML for each project in years" },
+        { "label": "Highlights", "value": "Contribution highlights specific to AI/ML" }
       ],
     }
   ];
 
 export const LanguagesUIData: TechDetailsDataRow[] =
-  [
-    {
-      "label": "C#",
-      "options": [
-        { "label": "By Project", "value": "List of all projects where I used C#" },
-        { "label": "By Year", "value": "Work done with C# by project in years in reverse chronogical order" },
-        { "label": "Highlights", "value": "Contribution highlights specific to C#" }
-      ],
-    },
-    {
-      "label": "Typescript",
-      "options": [
-        { "label": "By Project", "value": "Give me all projects where I used #token#" },
-        { "label": "By Year", "value": "Work done with #token# for each project in years" },
-        { "label": "Highlights", "value": "Contribution highlights specific to #token#" }
-      ],
-    },
-    {
-      "label": "JavaScript",
-      "options": [
-        { "label": "By Project", "value": "Give me all projects where I used #token#" },
-        { "label": "By Year", "value": "Work done with #token# for each project in years" },
-        { "label": "Highlights", "value": "Contribution highlights specific to #token#" }
-      ],
-    },
-    {
-      "label": "HTML",
-      "options": [
-        { "label": "By Project", "value": "Give me all projects where I used #token#" },
-        { "label": "By Year", "value": "Work done with #token# for each project in years" },
-        { "label": "Highlights", "value": "Contribution highlights specific to #token#" }
-      ],
-    },
-    {
-      "label": "PowerShell",
-      "options": [
-        { "label": "By Project", "value": "Give me all projects where I used #token#" },
-        { "label": "By Year", "value": "Work done with #token# for each project in years" },
-        { "label": "Highlights", "value": "Contribution highlights specific to #token#" }
-      ],
-    },
-    {
-      "label": "Bash",
-      "options": [
-        { "label": "By Project", "value": "Give me all projects where I used #token#" },
-        { "label": "By Year", "value": "Work done with #token# for each project in years" },
-        { "label": "Highlights", "value": "Contribution highlights specific to #token#" }
-      ],
-    },
-    {
-      "label": "Java",
-      "options": [
-        { "label": "By Project", "value": "Give me all projects where I used #token#" },
-        { "label": "By Year", "value": "Work done with #token# for each project in years" },
-        { "label": "Highlights", "value": "Contribution highlights specific to #token#" }
-      ],
-    },
-    {
-      "label": "Python",
-      "options": [
-        { "label": "By Project", "value": "Give me all projects where I used #token#" },
-        { "label": "By Year", "value": "Work done with #token# for each project in years" },
-        { "label": "Highlights", "value": "Contribution highlights specific to #token#" }
-      ],
-    },
-    {
-      "label": "SQL",
-      "options": [
-        { "label": "By Project", "value": "Give me all projects where I used #token#" },
-        { "label": "By Year", "value": "Work done with #token# for each project in years" },
-        { "label": "Highlights", "value": "Contribution highlights specific to #token#" }
-      ],
-    },
-    {
-      "label": "VB.NET",
-      "options": [
-        { "label": "By Project", "value": "Give me all projects where I used #token#" },
-        { "label": "By Year", "value": "Work done with #token# for each project in years" },
-        { "label": "Highlights", "value": "Contribution highlights specific to #token#" }
-      ],
-    },
-    {
-      "label": "Razor",
-      "options": [
-        { "label": "By Project", "value": "Give me all projects where I used #token#" },
-        { "label": "By Year", "value": "Work done with #token# for each project in years" },
-        { "label": "Highlights", "value": "Contribution highlights specific to #token#" }
-      ],
-    },
-    {
-      "label": "JSON",
-      "options": [
-        { "label": "By Project", "value": "Give me all projects where I used #token#" },
-        { "label": "By Year", "value": "Work done with #token# for each project in years" },
-        { "label": "Highlights", "value": "Contribution highlights specific to #token#" }
-      ],
-    },
-    {
-      "label": "Xml",
-      "options": [
-        { "label": "By Project", "value": "Give me all projects where I used #token#" },
-        { "label": "By Year", "value": "Work done with #token# for each project in years" },
-        { "label": "Highlights", "value": "Contribution highlights specific to #token#" }
-      ],
-    },
-    {
-      "label": "YAML",
-      "options": [
-        { "label": "By Project", "value": "Give me all projects where I used #token#" },
-        { "label": "By Year", "value": "Work done with #token# for each project in years" },
-        { "label": "Highlights", "value": "Contribution highlights specific to #token#" }
-      ],
-    },
-    {
-      "label": "Assembly",
-      "options": [
-        { "label": "By Project", "value": "Give me all projects where I used #token#" },
-        { "label": "By Year", "value": "Work done with #token# for each project in years" },
-        { "label": "Highlights", "value": "Contribution highlights specific to #token#" }
-      ],
-    },
-    {
-      "label": "IL/MSIL",
-      "options": [
-        { "label": "By Project", "value": "Give me all projects where I used #token#" },
-        { "label": "By Year", "value": "Work done with #token# for each project in years" },
-        { "label": "Highlights", "value": "Contribution highlights specific to #token#" }
-      ],
-    },
-  ];
+[
+  {
+    "label": "C#",
+    "options": [
+      { "label": "By Project", "value": "List of all projects where I used C#" },
+      { "label": "By Year", "value": "Work done with C# by project in years in reverse chronological order" },
+      { "label": "Highlights", "value": "Contribution highlights specific to C#" }
+    ]
+  },
+  {
+    "label": "Typescript",
+    "options": [
+      { "label": "By Project", "value": "Give me all projects where I used Typescript" },
+      { "label": "By Year", "value": "Work done with Typescript for each project in years" },
+      { "label": "Highlights", "value": "Contribution highlights specific to Typescript" }
+    ]
+  },
+  {
+    "label": "JavaScript",
+    "options": [
+      { "label": "By Project", "value": "Give me all projects where I used JavaScript" },
+      { "label": "By Year", "value": "Work done with JavaScript for each project in years" },
+      { "label": "Highlights", "value": "Contribution highlights specific to JavaScript" }
+    ]
+  },
+  {
+    "label": "HTML",
+    "options": [
+      { "label": "By Project", "value": "Give me all projects where I used HTML" },
+      { "label": "By Year", "value": "Work done with HTML for each project in years" },
+      { "label": "Highlights", "value": "Contribution highlights specific to HTML" }
+    ]
+  },
+  {
+    "label": "PowerShell",
+    "options": [
+      { "label": "By Project", "value": "Give me all projects where I used PowerShell" },
+      { "label": "By Year", "value": "Work done with PowerShell for each project in years" },
+      { "label": "Highlights", "value": "Contribution highlights specific to PowerShell" }
+    ]
+  },
+  {
+    "label": "Bash",
+    "options": [
+      { "label": "By Project", "value": "Give me all projects where I used Bash" },
+      { "label": "By Year", "value": "Work done with Bash for each project in years" },
+      { "label": "Highlights", "value": "Contribution highlights specific to Bash" }
+    ]
+  },
+  {
+    "label": "Java",
+    "options": [
+      { "label": "By Project", "value": "Give me all projects where I used Java" },
+      { "label": "By Year", "value": "Work done with Java for each project in years" },
+      { "label": "Highlights", "value": "Contribution highlights specific to Java" }
+    ]
+  },
+  {
+    "label": "Python",
+    "options": [
+      { "label": "By Project", "value": "Give me all projects where I used Python" },
+      { "label": "By Year", "value": "Work done with Python for each project in years" },
+      { "label": "Highlights", "value": "Contribution highlights specific to Python" }
+    ]
+  },
+  {
+    "label": "SQL",
+    "options": [
+      { "label": "By Project", "value": "Give me all projects where I used SQL" },
+      { "label": "By Year", "value": "Work done with SQL for each project in years" },
+      { "label": "Highlights", "value": "Contribution highlights specific to SQL" }
+    ]
+  },
+  {
+    "label": "VB.NET",
+    "options": [
+      { "label": "By Project", "value": "Give me all projects where I used VB.NET" },
+      { "label": "By Year", "value": "Work done with VB.NET for each project in years" },
+      { "label": "Highlights", "value": "Contribution highlights specific to VB.NET" }
+    ]
+  },
+  {
+    "label": "Razor",
+    "options": [
+      { "label": "By Project", "value": "Give me all projects where I used Razor" },
+      { "label": "By Year", "value": "Work done with Razor for each project in years" },
+      { "label": "Highlights", "value": "Contribution highlights specific to Razor" }
+    ]
+  },
+  {
+    "label": "JSON",
+    "options": [
+      { "label": "By Project", "value": "Give me all projects where I used JSON" },
+      { "label": "By Year", "value": "Work done with JSON for each project in years" },
+      { "label": "Highlights", "value": "Contribution highlights specific to JSON" }
+    ]
+  },
+  {
+    "label": "Xml",
+    "options": [
+      { "label": "By Project", "value": "Give me all projects where I used Xml" },
+      { "label": "By Year", "value": "Work done with Xml for each project in years" },
+      { "label": "Highlights", "value": "Contribution highlights specific to Xml" }
+    ]
+  },
+  {
+    "label": "YAML",
+    "options": [
+      { "label": "By Project", "value": "Give me all projects where I used YAML" },
+      { "label": "By Year", "value": "Work done with YAML for each project in years" },
+      { "label": "Highlights", "value": "Contribution highlights specific to YAML" }
+    ]
+  },
+  {
+    "label": "Assembly",
+    "options": [
+      { "label": "By Project", "value": "Give me all projects where I used Assembly" },
+      { "label": "By Year", "value": "Work done with Assembly for each project in years" },
+      { "label": "Highlights", "value": "Contribution highlights specific to Assembly" }
+    ]
+  },
+  {
+    "label": "IL/MSIL",
+    "options": [
+      { "label": "By Project", "value": "Give me all projects where I used IL/MSIL" },
+      { "label": "By Year", "value": "Work done with IL/MSIL for each project in years" },
+      { "label": "Highlights", "value": "Contribution highlights specific to IL/MSIL" }
+    ]
+  }
+]
+
 
 export const SDKSUIData: TechDetailsDataRow[] =
-  [
-    {
-      "label": "Libraries & SDK's",
-      "options": [
-        { "label": "By Project", "value": "Give me all projects where I used Azure" },
-        { "label": "By Year", "value": "Work done with Azure for each project in years" },
-        { "label": "Highlights", "value": "Contribution highlights specific to Azure" }
-      ],
-    }
-  ];
+[
+  {
+    "label": "Libraries & SDK's",
+    "options": [
+      { "label": "By Project", "value": "Give me all projects where I used Libraries & SDK's" },
+      { "label": "By Year", "value": "Work done with Libraries & SDK's for each project in years" },
+      { "label": "Highlights", "value": "Contribution highlights specific to Libraries & SDK's" }
+    ]
+  }
+]
+
 
 export const O365UIData: TechDetailsDataRow[] =
-  [
-    {
-      "label": "O365",
-      "options": [
-        { "label": "By Project", "value": "Give me all projects where I used Azure" },
-        { "label": "By Year", "value": "Work done with Azure for each project in years" },
-        { "label": "Highlights", "value": "Contribution highlights specific to Azure" }
-      ],
-    }
-  ];
+[
+  {
+    "label": "O365",
+    "options": [
+      { "label": "By Project", "value": "Give me all projects where I used O365" },
+      { "label": "By Year", "value": "Work done with O365 for each project in years" },
+      { "label": "Highlights", "value": "Contribution highlights specific to O365" }
+    ]
+  }
+]
 
 export const DevOpsUIData: TechDetailsDataRow[] =
-  [
-    {
-      "label": "O365",
-      "options": [
-        { "label": "By Project", "value": "Give me all projects where I used Azure" },
-        { "label": "By Year", "value": "Work done with Azure for each project in years" },
-        { "label": "Highlights", "value": "Contribution highlights specific to Azure" }
-      ],
-    }
-  ];
+[
+  {
+    "label": "O365",
+    "options": [
+      { "label": "By Project", "value": "Give me all projects where I used O365" },
+      { "label": "By Year", "value": "Work done with O365 for each project in years" },
+      { "label": "Highlights", "value": "Contribution highlights specific to O365" }
+    ]
+  }
+]
 
 export const StorageUIData: TechDetailsDataRow[] =
-  [
-    {
-      "label": "Storage",
-      "options": [
-        { "label": "By Project", "value": "Give me all projects where I used Azure" },
-        { "label": "By Year", "value": "Work done with Azure for each project in years" },
-        { "label": "Highlights", "value": "Contribution highlights specific to Azure" }
-      ],
-    }
-  ];
+[
+  {
+    "label": "Storage",
+    "options": [
+      { "label": "By Project", "value": "Give me all projects where I used Storage" },
+      { "label": "By Year", "value": "Work done with Storage for each project in years" },
+      { "label": "Highlights", "value": "Contribution highlights specific to Storage" }
+    ]
+  }
+]
 
 export const ProtocolsUIData: TechDetailsDataRow[] =
-  [
-    {
-      "label": "Protocols",
-      "options": [
-        { "label": "By Project", "value": "Give me all projects where I used Azure" },
-        { "label": "By Year", "value": "Work done with Azure for each project in years" },
-        { "label": "Highlights", "value": "Contribution highlights specific to Azure" }
-      ],
-    }
-  ];
+[
+  {
+    "label": "Protocols",
+    "options": [
+      { "label": "By Project", "value": "Give me all projects where I used Protocols" },
+      { "label": "By Year", "value": "Work done with Protocols for each project in years" },
+      { "label": "Highlights", "value": "Contribution highlights specific to Protocols" }
+    ]
+  }
+]
 
 export const IDEsUIData: TechDetailsDataRow[] =
-  [
-    {
-      "label": "IDE''s & More",
-      "options": [
-        { "label": "By Project", "value": "Give me all projects where I used Azure" },
-        { "label": "By Year", "value": "Work done with Azure for each project in years" },
-        { "label": "Highlights", "value": "Contribution highlights specific to Azure" }
-      ],
-    }
-  ];
+[
+  {
+    "label": "IDE's & More",
+    "options": [
+      { "label": "By Project", "value": "Give me all projects where I used IDE's & More" },
+      { "label": "By Year", "value": "Work done with IDE's & More for each project in years" },
+      { "label": "Highlights", "value": "Contribution highlights specific to IDE's & More" }
+    ]
+  }
+]
 
 export const OSUIData: TechDetailsDataRow[] =
-  [
-    {
-      "label": "OS",
-      "options": [
-        { "label": "By Project", "value": "Give me all projects where I used Azure" },
-        { "label": "By Year", "value": "Work done with Azure for each project in years" },
-        { "label": "Highlights", "value": "Contribution highlights specific to Azure" }
-      ],
-    }
-  ];
+[
+  {
+    "label": "OS",
+    "options": [
+      { "label": "By Project", "value": "Give me all projects where I used OS" },
+      { "label": "By Year", "value": "Work done with OS for each project in years" },
+      { "label": "Highlights", "value": "Contribution highlights specific to OS" }
+    ]
+  }
+]
 
 export type TechData = {
   label: string;
@@ -388,8 +398,8 @@ export type TechData = {
 };
 
 export const UIData: TechData[] = [
-  { label: 'AI/ML', details: AIMLUIData },
   { label: 'Azure', details: AzureUIData },
+  { label: 'AI/ML', details: AIMLUIData },
   { label: '.NET', details: NetUIData },
   { label: 'Architecture', details: ArchitectureUIData },
   { label: 'Languages', details: LanguagesUIData },
@@ -404,7 +414,7 @@ export const UIData: TechData[] = [
 ];
 
 export const resumeText = `
-Project DrDev (Technical Solution Architect/Team Lead)                                                              Jan 2019 –  Oct 2023, Houston
+Project T-Spot Fitness (Technical Solution Architect/Team Lead)                       Part Time on and off from Jan 2019 thru  Oct 2023, Southern California
 DrFit Cloud Architecture 🔎
 Domain Driven Design & Architecture – Patterns 🔎
 Azure cloud hosted DDD & pattern-based architecture is highly scalable for the potentially large numbers of users around the world. Core domain sub domains identified, distilled further into bounded contexts which are then mapped to implementation patterns. Generic & Supporting domains are also identified and mapped to already implemented patterns. Besides the largely Tactical DDD, important elements of Strategic-DDD like CI/CD and upstream-downstream Context Mapping were identified. 
@@ -447,7 +457,7 @@ DR/HA
 	Cosmos DB – Accomplished by leveraging the OOTB multiple region replication support by associating multiple regions with the global Cosmos DB resource and connecting with multi-master mode enabled
 	Web Apps in App Services – Azure Front Door is ideal for HTTP level routing with global failover. There have been some discussions about load balancing Azure API Management via AFD but no final plan yet
 
-C#, AAD, Keyvault, Monitoring+Insights, Automation, AAD B2C, Xamarin Forms, Azure SQL, Microservices, ARM, DevOps+Terraform+Helm, Azure, Redis Cache, Mongo DB, RabbitMQ
+C#, AAD, Keyvault, Monitoring+Insights, Automation, AAD B2C, Xamarin Forms, Azure SQL, Microservices, ARM, DevOps (Terraform & Helm), Azure, Redis Cache, Mongo DB, RabbitMQ
 SDKs & Tooling –MS Graph, MS Identity, Redis, Keyvault, Polly, NewtonSoft, EntityFramework, ASP.Net Core, FluentValidations, FluentAssertions, AutoFac, SeriLog, MS Owin, MS Open API, ELK Stack, Google/MS Grpc, MongoDB, VS Code, VS 2022, PowerShell, Node,js, MVVMCross, Skia Sharpnado
 
 Project Halliburton (Technical Solution Architect/Team Lead)                                                              Aug 2022 –  Mar 2024, Houston
@@ -489,7 +499,7 @@ o	Building Azure ML models using the tremendous amount of real time data collect
 
 -	Azure IaaS / DevOps
 o	Hosting configured on Azure VM’s (Dev & Stage)
-o	Setup Azure CI/CD around 9 Azure Pipelines 
+o	o	Setup Azure CI/CD for around 6 Azure Classic Pipelines with keyvault for secrets
 o	Everything SCRUM around ADO 
 -	Release Documentation
 o	Hosting deployment docs
